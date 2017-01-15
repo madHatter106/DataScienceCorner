@@ -1,1 +1,4 @@
-*.pyc
+cache
+.doi.db
+__pycache__
+output
