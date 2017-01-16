@@ -1,4 +1,5 @@
+*.pyc
 cache
-.doi.db
+.doit.db
 __pycache__
 output

@@ -18,15 +18,15 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Erdem K."  # (translatable)
-BLOG_TITLE = "Erdem's Data Cave"  # (translatable)
+BLOG_TITLE = "Data Science Corner"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://example.com/"
+SITE_URL = "https://madhatter106.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://example.com/"
+BASE_URL = "https://madhatter106.github.io/DataScienceCorner/"
 BLOG_EMAIL = "erdemk@protonmail.com"
-BLOG_DESCRIPTION = "My blog about my forays into data science"  # (translatable)
+BLOG_DESCRIPTION = "A blog about thoughts and games with data"  # (translatable)
 
 # Nikola is multilingual!
 #
