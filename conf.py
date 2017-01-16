@@ -18,7 +18,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Erdem Karakoylu"  # (translatable)
-BLOG_TITLE = "Data Science Corner"  # (translatable)
+BLOG_TITLE = "Erdem's HmmBlog"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://madhatter106.github.io/"
@@ -139,7 +139,7 @@ NAVIGATION_LINKS = {
             ('/rss.xml', 'RSS', 'icon-rss'),
             ('https://getnikola.com', 'About me', 'icon-user'),
             ('https://twitter.com/getnikola', 'My Twitter', 'icon-twitter'),
-            ('https://github.com/getnikola', 'My Github', 'icon-github'),
+            ('https://github.com/madHatter106', 'My Github', 'icon-github'),
 
     ),
 }
@@ -308,7 +308,7 @@ POSTS_SECTIONS = True
 
 # Setting this to False generates a list page instead of an index. Indexes
 # are the default and will apply GENERATE_ATOM if set.
-# POSTS_SECTIONS_ARE_INDEXES = True
+POSTS_SECTIONS_ARE_INDEXES = True
 
 # Each post and section page will have an associated color that can be used
 # to style them with a recognizable color detail across your site. A color
