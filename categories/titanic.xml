@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Erdem's Data Cave (titanic)</title><link>https://example.com/</link><description></description><atom:link type="application/rss+xml" href="https://example.com/categories/titanic.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 14 Jan 2017 20:28:42 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Titanic I: cleanup</title><link>https://example.com/posts/titanic-i-cleanup/</link><dc:creator>Erdem K.</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Data Science Corner (titanic)</title><link>https://madhatter106.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://madhatter106.github.io/DataScienceCorner/categories/titanic.xml"></atom:link><language>en</language><lastBuildDate>Mon, 16 Jan 2017 12:38:30 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Titanic I: cleanup</title><link>https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/</link><dc:creator>Erdem K.</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -7,7 +7,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="My-Goal:"&gt;My Goal:&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#My-Goal:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;In most data science tutorials I have seen, a lot of the data clean-up is done in what seems to me casually, an annoying obstacle to get to the sexy Machine Learning bit. I was curious to see what if any difference it made in my Kaggle ranking if I used a somewhat more cautious approach in my data cleanup. My approach was to dumbly follow Datacamp's tutorial and submit my test set labels as a benchmark. The second step is then to use a fancier data cleanup process and see whether taking the extra time actullay moves me up in the ranking (or perhaps down?).&lt;/p&gt;
+&lt;h4 id="My-Goal:"&gt;My Goal:&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#My-Goal:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;In most data science tutorials I have seen, a lot of the data clean-up is done in what seems to me casually, an annoying obstacle to get to the sexy Machine Learning bit. I was curious to see what if any difference it made in my Kaggle ranking if I used a somewhat more cautious approach in my data cleanup. My approach was to dumbly follow Datacamp's tutorial and submit my test set labels as a benchmark. The second step is then to use a fancier data cleanup process and see whether taking the extra time actullay moves me up in the ranking (or perhaps down?).&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -402,7 +402,7 @@ dtype: int64
 &lt;li&gt;&lt;strong&gt;Fare&lt;/strong&gt; is missing 1 entry and there are some free tickets in this set too.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Cabin&lt;/strong&gt; is missing 327 entries (but we don't care)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id="Getting-rid-of-features,-first-cut:"&gt;Getting rid of features, first cut:&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Getting-rid-of-features,-first-cut:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;First I'm going to get rid of PassengerId, Ticket and Cabin. While dropping the Name data is tempting, I'm going to hold on to it for now, in case I can use titles to help infer missing Age data.&lt;/p&gt;
+&lt;h4 id="Getting-rid-of-features,-first-cut:"&gt;Getting rid of features, first cut:&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Getting-rid-of-features,-first-cut:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;First I'm going to get rid of PassengerId, Ticket and Cabin. While dropping the Name data is tempting, I'm going to hold on to it for now, in case I can use titles to help infer missing Age data.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -601,7 +601,7 @@ dtype: int64
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Correcting-spurrious-entries-and-imputing-missing-data"&gt;Correcting spurrious entries and imputing missing data&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Correcting-spurrious-entries-and-imputing-missing-data"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;First, since a lot of the transformation are common to both the training and the test set I'm going to combine both sets to ensure imputation does not drive a statistical wedge between the two sets.&lt;/p&gt;
+&lt;h3 id="Correcting-spurrious-entries-and-imputing-missing-data"&gt;Correcting spurrious entries and imputing missing data&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Correcting-spurrious-entries-and-imputing-missing-data"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;First, since a lot of the transformation are common to both the training and the test set I'm going to combine both sets to ensure imputation does not drive a statistical wedge between the two sets.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -685,7 +685,7 @@ None
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Now we're ready to do some imputation/corrections.&lt;/p&gt;
-&lt;h4 id='Dealing-with-the-"free"-tickets-in-the-training-set:'&gt;Dealing with the "free" tickets in the training set:&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Dealing-with-the-%22free%22-tickets-in-the-training-set:"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id='Dealing-with-the-"free"-tickets-in-the-training-set:'&gt;Dealing with the "free" tickets in the training set:&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Dealing-with-the-%22free%22-tickets-in-the-training-set:"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -927,7 +927,7 @@ None
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h5 id='Some-common-details-among-"free-ticket"--cases:'&gt;Some common details among "free ticket"  cases:&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Some-common-details-among-%22free-ticket%22--cases:"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;ul&gt;
+&lt;h5 id='Some-common-details-among-"free-ticket"--cases:'&gt;Some common details among "free ticket"  cases:&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Some-common-details-among-%22free-ticket%22--cases:"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;embarked in Southampton&lt;/li&gt;
 &lt;li&gt;SibSp = 0&lt;/li&gt;
 &lt;li&gt;Parch = 0&lt;/li&gt;
@@ -969,7 +969,7 @@ None
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Imputing-missing-values"&gt;Imputing missing values&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Imputing-missing-values"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Imputing-missing-values"&gt;Imputing missing values&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Imputing-missing-values"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -978,7 +978,7 @@ None
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Imputing-Embarked"&gt;Imputing Embarked&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Imputing-Embarked"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Embarked&lt;/strong&gt; is only missing 2 entries, so I'd impute base on what's more common. But since the goal of this exercise is to be OCD:&lt;/p&gt;
+&lt;h4 id="Imputing-Embarked"&gt;Imputing Embarked&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Imputing-Embarked"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Embarked&lt;/strong&gt; is only missing 2 entries, so I'd impute base on what's more common. But since the goal of this exercise is to be OCD:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1144,7 +1144,7 @@ Name: Embarked, dtype: int64&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Imputing-Fare-(in-the-test-set)"&gt;Imputing Fare (in the test set)&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Imputing-Fare-(in-the-test-set)"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="Imputing-Fare-(in-the-test-set)"&gt;Imputing Fare (in the test set)&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Imputing-Fare-(in-the-test-set)"&gt;¶&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1202,7 +1202,7 @@ Name: Embarked, dtype: int64&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Imputing-Age:"&gt;Imputing Age:&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Imputing-Age:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Age is one of those things that to a first approximation can be estimated by how a person is referred to.
+&lt;h4 id="Imputing-Age:"&gt;Imputing Age:&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Imputing-Age:"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Age is one of those things that to a first approximation can be estimated by how a person is referred to.
 First I am going to catalogue titles present in names and create another feature, "Title". To do this I need to do an inventory of all possible titles present in the dataset. Titles seem to be the seconde word in the name string, ending with a '.'.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -1503,7 +1503,7 @@ None
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Labeling-categorical-data"&gt;Labeling categorical data&lt;a class="anchor-link" href="https://example.com/posts/titanic-i-cleanup/#Labeling-categorical-data"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Sex, and Embarked are categorical variables that need to be relabeled numerically. Because neither feature is ordinal, I'm going to one-hot encode both, using pandas' get_dummies method&lt;/p&gt;
+&lt;h4 id="Labeling-categorical-data"&gt;Labeling categorical data&lt;a class="anchor-link" href="https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/#Labeling-categorical-data"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Sex, and Embarked are categorical variables that need to be relabeled numerically. Because neither feature is ordinal, I'm going to one-hot encode both, using pandas' get_dummies method&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1632,4 +1632,4 @@ None
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-</description><category>Ipython</category><category>Jupyter notebook</category><category>kaggle</category><category>titanic</category><guid>https://example.com/posts/titanic-i-cleanup/</guid><pubDate>Mon, 09 Jan 2017 21:46:09 GMT</pubDate></item></channel></rss>
+</description><category>Ipython</category><category>Jupyter notebook</category><category>kaggle</category><category>titanic</category><guid>https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/</guid><pubDate>Mon, 09 Jan 2017 21:46:09 GMT</pubDate></item></channel></rss>

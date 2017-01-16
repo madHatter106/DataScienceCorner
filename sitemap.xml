@@ -6,71 +6,71 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://example.com/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/2017/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/2017/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/archive.html</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/archive.html</loc>
+  <lastmod>2017-01-16T12:38:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/blog/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/blog/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/classification/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/classification/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/ipython/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/ipython/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/jupyter-notebook/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/jupyter-notebook/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/kaggle/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/kaggle/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/logistic-regression/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/logistic-regression/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/machine-learning/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/machine-learning/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/pymc3/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/pymc3/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/titanic/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/titanic/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/galleries/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/galleries/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/listings/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/listings/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/bayesian-logistic-regression/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/bayesian-logistic-regression/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://example.com/posts/titanic-i-cleanup/</loc>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
 </urlset>

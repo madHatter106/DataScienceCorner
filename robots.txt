@@ -1,4 +1,4 @@
-Sitemap: https://example.com/sitemapindex.xml
+Sitemap: https://madhatter106.github.io/DataScienceCorner/sitemapindex.xml
 
 User-Agent: *
-Host: example.com
+Host: madhatter106.github.io
