@@ -137,8 +137,8 @@ NAVIGATION_LINKS = {
             ('/archive.html', 'Archives', 'icon-folder-open-alt'),
             ('/categories/index.html', 'Tags', 'icon-tags'),
             ('/rss.xml', 'RSS', 'icon-rss'),
-            ('https://getnikola.com', 'About me', 'icon-user'),
-            ('https://twitter.com/getnikola', 'My Twitter', 'icon-twitter'),
+            ('https://www.linkedin.com/in/erdem-karaköylü-49487455', 'About me', 'icon-user'),
+            ('https://twitter.com/grayWolfDC', 'My Twitter', 'icon-twitter'),
             ('https://github.com/madHatter106', 'My Github', 'icon-github'),
 
     ),
@@ -308,7 +308,7 @@ POSTS_SECTIONS = True
 
 # Setting this to False generates a list page instead of an index. Indexes
 # are the default and will apply GENERATE_ATOM if set.
-POSTS_SECTIONS_ARE_INDEXES = True
+POSTS_SECTIONS_ARE_INDEXES = False
 
 # Each post and section page will have an associated color that can be used
 # to style them with a recognizable color detail across your site. A color
