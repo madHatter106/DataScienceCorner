@@ -6,14 +6,6 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/blog.xml</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/classification.xml</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ipython.xml</loc>
   <lastmod>2017-01-16T12:38:00Z</lastmod>
  </sitemap>
@@ -26,24 +18,12 @@
   <lastmod>2017-01-16T12:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/logistic-regression.xml</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/machine-learning.xml</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/pymc3.xml</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/titanic.xml</loc>
   <lastmod>2017-01-16T12:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/galleries/rss.xml</loc>
-  <lastmod>2017-01-16T12:38:00Z</lastmod>
+  <lastmod>2017-01-16T20:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/rss.xml</loc>
@@ -51,6 +31,6 @@
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/sitemap.xml</loc>
-  <lastmod>2017-01-16T12:38:00Z</lastmod>
+  <lastmod>2017-01-16T20:27:00Z</lastmod>
  </sitemap>
 </sitemapindex>
