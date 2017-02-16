@@ -1036,7 +1036,20 @@ MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 # <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
 # <!-- End of social buttons -->
 # """
-
+SOCIAL_BUTTONS_CODE = """
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more"><i class="icon-share-sign icon-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;Share</a>
+<ul>
+<li><a class="addthis_button_twitter"><i class="icon-twitter icon-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;Twitter</a>
+<li><a class="addthis_button_google_plusone_share"><i class="icon-google-plus-sign icon-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;Google+</a>
+<li><a class="addthis_button_linkedin"><i class="icon-linkedin icon-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;Linkedin</a>
+<li><a class="addthis_button_facebook"><i class="icon-facebook-sign icon-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;Facebook</a>
+</ul>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+"""
 # Show link to source for the posts?
 # Formerly known as HIDE_SOURCELINK (inverse)
 # SHOW_SOURCELINK = True
