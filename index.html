@@ -49,8 +49,8 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This post describes an attempt at reproducing a <a href="http://ieeexplore.ieee.org/document/942555/">study of ocean color optical water types (OWT)</a>. Here, remote sensing reflectance (Rrs) was used to classify regions of the ocean according to their <a href="https://en.wikipedia.org/wiki/Water_remote_sensing">apparent optical properties</a>
-The author uses fuzzy c-means (FCM) clustering. However, <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.403.7600&amp;rep=rep1&amp;type=pdf">K-means clustering yields results that are pretty close to FMC</a>. So that's what I'll use here. 
+<p>This post describes an attempt at reproducing a <a href="http://ieeexplore.ieee.org/document/942555/">study of ocean color optical water types (OWT)</a>. Here, remote sensing reflectance (Rrs) was used to partition samples into one of several water types according to their <a href="https://en.wikipedia.org/wiki/Water_remote_sensing">apparent optical properties</a>. Naturally, the assumption is that the data set at hand - over 2400 samples including latitude, longitude, 12 bands in the visible spectrum, and chlorophyll. 
+The authors of the study referred to above used fuzzy c-means clustering (FCM). However, <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.403.7600&amp;rep=rep1&amp;type=pdf">K-means clustering yields results that are pretty close to FMC</a>. So that's what I'll use here. 
 </p>
 <p class="more"><a href="posts/clustering-optical-water-types/">Read more…</a></p>
 </div>
