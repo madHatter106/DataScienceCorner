@@ -5,3 +5,9 @@ __pycache__
 output
 
 posts/\.ipynb_checkpoints/
+
+*.bak
+
+*.dat
+
+*.dir
