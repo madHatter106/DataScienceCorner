@@ -14,7 +14,7 @@ article: http://ogp.me/ns/article#
 <meta property="og:site_name" content="Erdem K's DS corner">
 <meta property="og:title" content="XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part I">
 <meta property="og:url" content="https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/">
-<meta property="og:description" content="With this post I explore an alternative to ol' numpy; xarray. This is a very handy library that purports to apply the pandas concept of labeled dimension to large data arrays for scientific computatio">
+<meta property="og:description" content="With this post I explore an alternative to ol' numpy; xarray. Numpy is still running under the hood but this very handy library applies the pandas concept of labeled dimension to large N-dimension arr">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2017-02-20T11:16:55-05:00">
 <meta property="article:tag" content="Jupyter notebook">
@@ -62,10 +62,10 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With this post I explore an alternative to ol' numpy; <a href="http://xarray.pydata.org/en/stable/index.html">xarray</a>. This is a very handy library that purports to apply the <a href="http://pandas.pydata.org/">pandas</a> concept of labeled dimension to large data arrays for scientific computation. In addition to the resulting ease of manipulation of dimensions without having to guess what they correspond to, xarray plays nicely with two other relatively new libraries:</p>
+<p>With this post I explore an alternative to ol' numpy; <a href="http://xarray.pydata.org/en/stable/index.html">xarray</a>. Numpy is still running under the hood but this very handy library applies the <a href="http://pandas.pydata.org/">pandas</a> concept of labeled dimension to large N-dimension arrays prevalent in scientific computing. The result is an ease of manipulation of dimensions without having to guess or remember what they correspond to. Moreover, xarray plays nicely with two other relatively new libraries:</p>
 <ul>
 <li>
-<a href="http://dask.pydata.org/en/latest/">dask</a>, which enables out of core computation so that memory availability becomes much less an issue; </li>
+<a href="http://dask.pydata.org/en/latest/">dask</a>, which enables out of core computation so that memory availability becomes much less an issue with large data sets; </li>
 <li>
 <a href="http://geo.holoviews.org/">GeoViews</a>, a library sitting on top of <a href="http://holoviews.org/">HoloViews</a>. The latter eases the burden of data visualization by offering an unusual approach that does away with step-by-step graphical coding and allows the user to concentrate how the data organization instead. This results in a substantial reduction code written, which makes data analysis much cleaner and less bug-prone. GeoViews sits on top of the visualization package HoloViews, with an emphasis on geophysical data. It's also my first good-bye to the aging (10+ years) matplotlib library. It'll still be handy now and then, but it's time to try new things. <!-- TEASER_END -->
 </li>
@@ -210,7 +210,8 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I don't need "palette". I am interested in the uncertainty data, however. These are 64 bits float with lat lon dimensions. Let's make sure these arrays are inter-comparable</p>
+<p>Here Rrs refers to Remote sensing reflectance (units of per steradian or $sr^{-1}$). The number at the end of the label string refers to the corresponding wavelength, in nanometers.</p>
+<p>I don't need "palette". I am interested in the uncertainty data, however. These are 64 bits float with lat lon dimensions. Let's make sure these arrays are inter-comparable.</p>
 
 </div>
 </div>
