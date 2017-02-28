@@ -15,11 +15,27 @@
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/archive.html</loc>
-  <lastmod>2017-02-20T16:48:00Z</lastmod>
+  <lastmod>2017-02-28T15:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/</loc>
-  <lastmod>2017-02-20T16:48:00Z</lastmod>
+  <lastmod>2017-02-28T15:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/beaching/</loc>
+  <lastmod>2017-02-28T15:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/cape-cod/</loc>
+  <lastmod>2017-02-28T15:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/geoviews/</loc>
+  <lastmod>2017-02-28T15:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/holoviews/</loc>
+  <lastmod>2017-02-28T15:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ipython/</loc>
@@ -30,12 +46,24 @@
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/jupyter/</loc>
+  <lastmod>2017-02-28T15:27:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/kaggle/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/marine-mammal/</loc>
+  <lastmod>2017-02-28T15:45:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ocean-color/</loc>
   <lastmod>2017-02-20T16:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/optical-water-type/</loc>
+  <lastmod>2017-02-28T15:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/titanic/</loc>
@@ -58,11 +86,19 @@
   <lastmod>2017-02-19T02:59:00Z</lastmod>
  </url>
  <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/marine-mammal-beachings/</loc>
+  <lastmod>2017-02-28T15:27:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/</loc>
   <lastmod>2017-02-20T16:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/</loc>
+  <lastmod>2017-02-28T15:27:00Z</lastmod>
  </url>
 </urlset>

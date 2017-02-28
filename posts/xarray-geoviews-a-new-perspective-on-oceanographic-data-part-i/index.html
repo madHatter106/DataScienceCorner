@@ -62,7 +62,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With this post I explore an alternative to ol' numpy; <a href="http://xarray.pydata.org/en/stable/index.html">xarray</a>. This is a very handy library that purports to apply the pandas concept of labeled dimension to large data arrays for scientific computation. In addition to the resulting ease of manipulation of dimensions without having to guess what they correspond to, xarray plays nicely with two other relatively new libraries:</p>
+<p>With this post I explore an alternative to ol' numpy; <a href="http://xarray.pydata.org/en/stable/index.html">xarray</a>. This is a very handy library that purports to apply the <a href="http://pandas.pydata.org/">pandas</a> concept of labeled dimension to large data arrays for scientific computation. In addition to the resulting ease of manipulation of dimensions without having to guess what they correspond to, xarray plays nicely with two other relatively new libraries:</p>
 <ul>
 <li>
 <a href="http://dask.pydata.org/en/latest/">dask</a>, which enables out of core computation so that memory availability becomes much less an issue; </li>
@@ -362,7 +362,7 @@ This is as easy as 1, 2, 3... lines of code</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now I can close the netcdf dataset handle. Note that the <strong>enter</strong> and <strong>exit</strong> methods being implemented, sticking the code above inside a "with" context would be the proper way to go about this; it'll also be how I'll do things next time.</p>
+<p>Now I can close the netcdf dataset handle. Note that the __enter__() and __exit__() methods being implemented, sticking the code above inside a "with" context would be the proper way to go about this; it'll also be how I'll do things next time.</p>
 
 </div>
 </div>
@@ -662,23 +662,10 @@ This is as easy as 1, 2, 3... lines of code</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's it! In the next <a href=".">post</a>, I will continue with some more data organization as shape the data for visualization using geoviews. Happy hacking!</p>
+<p>That's it! In the next <a href=".">post</a>, I will continue with some more data organization and shape the data for visualization using GeoViews. Happy hacking!</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
@@ -686,7 +673,10 @@ This is as easy as 1, 2, 3... lines of code</p>
         </div>
                 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../clustering-optical-water-types/" rel="prev" title="Clustering Optical Water Types">Previous post</a>
+                <a href="../marine-mammal-beachings/" rel="prev" title="Marine Mammal Beachings">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/" rel="next" title="XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part II">Next post</a>
             </li>
         </ul>
 <script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
