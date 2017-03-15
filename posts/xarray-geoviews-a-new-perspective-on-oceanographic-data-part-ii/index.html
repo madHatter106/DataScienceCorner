@@ -127,26 +127,48 @@ containing one 3D array where dimensions are latitude, longitude, experiment.</p
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><em>xarray</em></strong> has a nifty feature that allows opening multiple datasets, and automatically concatenating matching (by name and dimension) arrays, with the option of naming the thus newly created dimension. In our case, this is <em>'experiment'</em>. The next line of code, below, opens what will end up being a temporary xarray Dataset - note that you will need <a href="http://dask.pydata.org/en/latest/">dask</a> installed for this. I'll then label the <em>experiment</em> dimension with the appropriate experiment names. Importantly, the concatenation direction reflects the order in which the file paths are specified, and it's also the order the experiment names are in in the <em>'expDirs'</em> list defined above.</p>
+<p>I'm only interested in the visible bands because of the <a href="http://www.ioccg.org/training/SLS-2012/Mobley_Lect3.pdf">black pixel assumption used in the atmospheric correction applied during the processing phase</a>, which renders Rrs in the near-infrared bands useless.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="mi">412</span><span class="p">,</span> <span class="mi">443</span><span class="p">,</span> <span class="mi">490</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="mi">555</span><span class="p">,</span> <span class="mi">670</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>xarray</em></strong> has a nifty feature that allows opening multiple datasets, and automatically concatenating matching (by name and dimension) arrays, with the option of naming the thus newly created dimension. In our case, this is <em>'experiment'</em>. The next line of code, below, opens what will end up being a temporary xarray Dataset - note that you will need <a href="http://dask.pydata.org/en/latest/">dask</a> installed for this. I'll then label the <em>experiment</em> dimension with the appropriate experiment names. Importantly, the concatenation direction reflects the order in which the file paths are specified, and it's also the order the experiment names are in in the <em>'expDirs'</em> list defined above. I also make sure that the Rrs uncertainty data is labeled the same, 'rrs_unc'.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">fpaths</span><span class="p">,</span> <span class="n">concat_dim</span><span class="o">=</span><span class="s1">'experiment'</span><span class="p">)</span> <span class="k">as</span> <span class="n">allData</span><span class="p">:</span>
     <span class="n">allData</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">'experiment'</span><span class="p">]</span> <span class="o">=</span> <span class="n">expDirs</span>
-    <span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="mi">412</span><span class="p">,</span> <span class="mi">443</span><span class="p">,</span> <span class="mi">490</span><span class="p">,</span> <span class="mi">510</span><span class="p">,</span> <span class="mi">555</span><span class="p">,</span> <span class="mi">670</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">band</span> <span class="ow">in</span> <span class="n">bands</span><span class="p">:</span>
         <span class="n">foutpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dataDir</span><span class="p">,</span> <span class="n">outDir</span><span class="p">,</span> <span class="s1">'</span><span class="si">%s%d%s</span><span class="s1">'</span> <span class="o">%</span><span class="p">(</span><span class="n">fpattern</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'SU'</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
                                                             <span class="n">band</span><span class="p">,</span> <span class="s1">'.nc'</span><span class="p">))</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">foutpath</span><span class="p">)):</span>
             <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">foutpath</span><span class="p">))</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">allData</span><span class="o">.</span><span class="n">data_vars</span><span class="p">[</span><span class="s1">'Rrs_unc_</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">band</span><span class="p">]</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s1">'rrs_unc'</span> <span class="o">%</span> <span class="n">band</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s1">'rrs_unc'</span>
         <span class="n">dsData</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">()</span>
         <span class="n">dsData</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">foutpath</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">'netcdf4'</span><span class="p">)</span>
 </pre></div>
@@ -168,7 +190,7 @@ containing one 3D array where dimensions are latitude, longitude, experiment.</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">foutpath</span><span class="p">))</span>
@@ -183,7 +205,7 @@ containing one 3D array where dimensions are latitude, longitude, experiment.</p
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -212,19 +234,6 @@ That's it. This will make it easy for me, in the <a href=".">next post</a>, to u
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
     </div>
   </div>
 
@@ -232,6 +241,9 @@ That's it. This will make it easy for me, in the <a href=".">next post</a>, to u
                 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/" rel="prev" title="XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part I">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../getting-nomadata-into-a-pandas-dataframe/" rel="next" title="Getting NOMAData into a Pandas DataFrame">Next post</a>
             </li>
         </ul>
 <script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
