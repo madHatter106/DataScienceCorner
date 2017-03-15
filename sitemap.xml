@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/</loc>
-  <lastmod>2017-02-28T15:49:00Z</lastmod>
+  <lastmod>2017-03-15T19:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/beaching/</loc>
@@ -28,6 +28,10 @@
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/cape-cod/</loc>
   <lastmod>2017-02-28T15:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/chlorophyll/</loc>
+  <lastmod>2017-03-15T19:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ipython/</loc>
@@ -58,6 +62,10 @@
   <lastmod>2017-02-28T15:27:00Z</lastmod>
  </url>
  <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/pandas/</loc>
+  <lastmod>2017-03-15T19:23:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/titanic/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
@@ -78,8 +86,8 @@
   <lastmod>2017-02-19T02:59:00Z</lastmod>
  </url>
  <url>
-  <loc>https://madhatter106.github.io/DataScienceCorner/posts/marine-mammal-beachings/</loc>
-  <lastmod>2017-02-28T15:49:00Z</lastmod>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/getting-nomadata-into-a-pandas-dataframe/</loc>
+  <lastmod>2017-03-15T19:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/</loc>
