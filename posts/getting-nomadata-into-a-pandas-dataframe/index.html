@@ -563,7 +563,7 @@ First things first; imports!</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>My project is about developing a bayesian framework for estimating biological variables using remote sensing data. So I'll need to copy over a few more features from the inital dataset.</p>
+<p>For the projects I'm currently working on, I'll need to select a few more features from the inital dataset.</p>
 
 </div>
 </div>
@@ -665,15 +665,14 @@ First things first; imports!</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Next is to further cull the dataset according to the "Data Source" section in a paper I am using for comparison, by <a href="http://onlinelibrary.wiley.com/doi/10.1029/2011JC007395/pdf">Hu <em>et al.</em>, 2012</a>. This study draws from this same data set, applying the following criteria:</p>
+<p>The first project that I'll first tackle is a recasting of the OCx empirical band ratio algorithms within a Bayesian framework. For that I can further cull the dataset following the "Data Source" section in a paper I am using for comparison by <a href="http://onlinelibrary.wiley.com/doi/10.1029/2011JC007395/pdf">Hu <em>et al.</em>, 2012</a>. This study draws from this same data set, applying the following criteria:</p>
 <ul>
 <li>only hplc chlorophyll</li>
 <li>chl&gt;0 where rrs&gt;0</li>
 <li>depth&gt;30</li>
 <li>lat $\in\left[-60,60\right]$</li>
 </ul>
-<p>Applying these criteria should result in a dataset reduced to 136 observations.</p>
-<p>Since I've pickled the SeaWiFS DataFrame and I don't need all features for this particular project, I'll start by building a smaller data set with just the features I need (+ a couple more) and get rid of the bigger dataframes...</p>
+<p>Applying these criteria should result in a dataset reduced to <strong><em>136</em></strong> observations.</p>
 
 </div>
 </div>
@@ -743,7 +742,7 @@ memory usage: 400.7 KB
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Apparently the only null entries are in the hplc_chl column. That takes care I'll drop those...</p>
+<p>Apparently the only null entries are in the hplc_chl column. Dropping the nulls in that column takes care of the first of the criteria listed above.</p>
 
 </div>
 </div>
@@ -1128,7 +1127,7 @@ memory usage: 400.7 KB
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nope. We're down to 964 observations. So much for reproducibility via pdf. Getting rid of spurions rrs values...</p>
+<p>Nope. We're down to 964 observations. So much for reproducibility via publication. Getting rid of spurions rrs values...</p>
 
 </div>
 </div>
