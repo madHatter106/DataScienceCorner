@@ -17,8 +17,8 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "Erdem Karakoylu"  # (translatable)
-BLOG_TITLE = "Erdem K's DS corner"  # (translatable)
+BLOG_AUTHOR = "Erdem Karaköylü"  # (translatable)
+BLOG_TITLE = "Erdem Karaköylü 's DS corner"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://madhatter106.github.io/"
