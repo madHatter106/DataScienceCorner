@@ -6,8 +6,12 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/bayesian-regression.xml</loc>
+  <lastmod>2017-04-09T15:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/chlorophyll.xml</loc>
-  <lastmod>2017-03-15T20:02:00Z</lastmod>
+  <lastmod>2017-04-09T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ipython.xml</loc>
@@ -19,7 +23,7 @@
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/jupyter.xml</loc>
-  <lastmod>2017-03-15T19:23:00Z</lastmod>
+  <lastmod>2017-04-09T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/kaggle.xml</loc>
@@ -27,15 +31,19 @@
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ocean-color.xml</loc>
-  <lastmod>2017-03-15T20:02:00Z</lastmod>
+  <lastmod>2017-04-09T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/optical-water-type.xml</loc>
-  <lastmod>2017-03-15T19:23:00Z</lastmod>
+  <lastmod>2017-03-16T03:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/pandas.xml</loc>
-  <lastmod>2017-03-15T20:02:00Z</lastmod>
+  <lastmod>2017-04-09T15:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/pymc3.xml</loc>
+  <lastmod>2017-04-09T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/titanic.xml</loc>
@@ -43,18 +51,18 @@
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/xarray.xml</loc>
-  <lastmod>2017-03-14T19:23:00Z</lastmod>
+  <lastmod>2017-04-09T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/galleries/rss.xml</loc>
-  <lastmod>2017-02-19T15:42:00Z</lastmod>
+  <lastmod>2017-04-09T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/rss.xml</loc>
-  <lastmod>2017-03-15T20:02:00Z</lastmod>
+  <lastmod>2017-04-09T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/sitemap.xml</loc>
-  <lastmod>2017-03-15T20:02:00Z</lastmod>
+  <lastmod>2017-04-09T15:03:00Z</lastmod>
  </sitemap>
 </sitemapindex>

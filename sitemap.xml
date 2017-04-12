@@ -15,11 +15,15 @@
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/archive.html</loc>
-  <lastmod>2017-02-28T15:27:00Z</lastmod>
+  <lastmod>2017-04-09T15:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/</loc>
-  <lastmod>2017-03-15T19:24:00Z</lastmod>
+  <lastmod>2017-04-09T15:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/bayesian-regression/</loc>
+  <lastmod>2017-04-09T15:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/chlorophyll/</loc>
@@ -54,6 +58,10 @@
   <lastmod>2017-03-15T19:23:00Z</lastmod>
  </url>
  <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/pymc3/</loc>
+  <lastmod>2017-04-09T15:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/titanic/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
  </url>
@@ -68,6 +76,10 @@
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/listings/</loc>
   <lastmod>2017-01-14T20:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/bayesian-approach-to-empirical-chlorophyll-estimation-from-ocean-color/</loc>
+  <lastmod>2017-04-09T15:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/clustering-optical-water-types/</loc>

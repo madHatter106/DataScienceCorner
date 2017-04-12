@@ -6,12 +6,12 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Getting NOMAData into a Pandas DataFrame | Erdem K's DS corner</title>
+<title>Getting NOMAData into a Pandas DataFrame | Erdem Karaköylü 's DS corner</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://madhatter106.github.io/DataScienceCorner/posts/getting-nomadata-into-a-pandas-dataframe/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Erdem Karakoylu">
-<meta property="og:site_name" content="Erdem K's DS corner">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Erdem Karaköylü">
+<meta property="og:site_name" content="Erdem Karaköylü 's DS corner">
 <meta property="og:title" content="Getting NOMAData into a Pandas DataFrame">
 <meta property="og:url" content="https://madhatter106.github.io/DataScienceCorner/posts/getting-nomadata-into-a-pandas-dataframe/">
 <meta property="og:description" content="In this post, I'm going to briefly describe how a I download the NASA bio-Optical Marine Algorithm Dataset or NOMAD created for algorithm development, extract the data I need and store it all neatly i">
@@ -213,11 +213,11 @@ First things first; imports!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">ParseTextFile</span><span class="p">(</span><span class="n">GetNomad</span><span class="p">(),</span> <span class="n">topickle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">convert2DateTime</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                  <span class="n">pkl_fname</span><span class="o">=</span><span class="s1">'/accounts/ekarakoy/DATA/dfNomadRaw.pkl'</span><span class="p">)</span>
+                  <span class="n">pkl_fname</span><span class="o">=</span><span class="s1">'./bayesianChl_DATA/dfNomadRaw.pkl'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -227,7 +227,7 @@ First things first; imports!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -242,7 +242,7 @@ First things first; imports!</p>
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[6]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -416,7 +416,7 @@ First things first; imports!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bandregex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'es([0-9]+)'</span><span class="p">)</span>
@@ -456,7 +456,7 @@ First things first; imports!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">swfBands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'411'</span><span class="p">,</span><span class="s1">'443'</span><span class="p">,</span><span class="s1">'489'</span><span class="p">,</span><span class="s1">'510'</span><span class="p">,</span><span class="s1">'555'</span><span class="p">,</span><span class="s1">'670'</span><span class="p">]</span>
@@ -472,7 +472,7 @@ First things first; imports!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfSwf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -487,7 +487,7 @@ First things first; imports!</p>
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -570,7 +570,7 @@ First things first; imports!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfSwf</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'i4'</span><span class="p">)</span> <span class="c1"># in case I need to relate this data to the original</span>
@@ -605,7 +605,7 @@ First things first; imports!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dfSwf</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -649,10 +649,10 @@ First things first; imports!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfSwf</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">'/accounts/ekarakoy/DATA/dfNomadSWF.pkl'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfSwf</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">'./bayesianChl_DATA/dfNomadSWF.pkl'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1356,13 +1356,16 @@ memory usage: 400.7 KB
 <li class="previous">
                 <a href="../xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/" rel="prev" title="XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part II">Previous post</a>
             </li>
+            <li class="next">
+                <a href="../bayesian-approach-to-empirical-chlorophyll-estimation-from-ocean-color/" rel="next" title="Bayesian Approach to Empirical Chlorophyll Estimation from Ocean Color">Next post</a>
+            </li>
         </ul>
 <script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="https://madhatter106.github.io/DataScienceCorner/posts/getting-nomadata-into-a-pandas-dataframe/" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
     </div>
-                     <footer id="footer"><p>Contents © 2017         <a href="mailto:erdemk@protonmail.com">Erdem Karakoylu</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+                     <footer id="footer"><p>Contents © 2017         <a href="mailto:erdemk@protonmail.com">Erdem Karaköylü</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>

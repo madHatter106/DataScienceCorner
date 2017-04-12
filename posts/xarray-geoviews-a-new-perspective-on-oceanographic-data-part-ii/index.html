@@ -6,12 +6,12 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part II | Erdem K's DS corner</title>
+<title>XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part II | Erdem Karaköylü 's DS corner</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Erdem Karakoylu">
-<meta property="og:site_name" content="Erdem K's DS corner">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Erdem Karaköylü">
+<meta property="og:site_name" content="Erdem Karaköylü 's DS corner">
 <meta property="og:title" content="XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part II">
 <meta property="og:url" content="https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/">
 <meta property="og:description" content="In a previous post, I introduced xarray with some simple manipulation and data plotting. In this super-short post, I'm going to do some more manipulation, using multiple input files to create a new di">
@@ -111,7 +111,7 @@ containing one 3D array where dimensions are latitude, longitude, experiment.</p
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataDir</span> <span class="o">=</span> <span class="s1">'/accounts/ekarakoy/disk02/UNCERTAINTIES/Monte-Carlo/DATA/AncillaryMC/'</span>
-<span class="n">expDirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Lt'</span><span class="p">,</span> <span class="s1">'AllAnc_Lt'</span><span class="p">,</span> <span class="s1">'Pressure'</span><span class="p">,</span> <span class="s1">'RH'</span><span class="p">,</span> <span class="s1">'WindSpeed'</span><span class="p">]</span>
+<span class="n">expDirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Lt'</span><span class="p">,</span> <span class="s1">'AllAnc_Lt'</span><span class="p">,</span> <span class="s1">'Pressure'</span><span class="p">,</span> <span class="s1">'RH'</span><span class="p">,</span> <span class="s1">'WindSpeed'</span><span class="p">,</span> <span class="s1">'O3'</span><span class="p">]</span>
 <span class="n">outDir</span> <span class="o">=</span> <span class="s1">'Synthesis'</span>
 <span class="n">fpattern</span> <span class="o">=</span> <span class="s1">'S20031932003196.L3m_4D_SU*.nc'</span>
 <span class="n">fpaths</span> <span class="o">=</span> <span class="p">[</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dataDir</span><span class="p">,</span> <span class="n">expDir</span><span class="p">,</span> <span class="n">fpattern</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">expDir</span> <span class="ow">in</span> <span class="n">expDirs</span><span class="p">]</span>
@@ -251,7 +251,7 @@ That's it. This will make it easy for me, in the <a href=".">next post</a>, to u
 
 
     </div>
-                     <footer id="footer"><p>Contents © 2017         <a href="mailto:erdemk@protonmail.com">Erdem Karakoylu</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+                     <footer id="footer"><p>Contents © 2017         <a href="mailto:erdemk@protonmail.com">Erdem Karaköylü</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
