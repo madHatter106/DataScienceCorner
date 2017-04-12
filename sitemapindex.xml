@@ -6,16 +6,12 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/beaching.xml</loc>
-  <lastmod>2017-03-15T19:09:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/cape-cod.xml</loc>
-  <lastmod>2017-03-15T19:09:00Z</lastmod>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/bayesian-regression.xml</loc>
+  <lastmod>2017-04-12T19:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/chlorophyll.xml</loc>
-  <lastmod>2017-03-15T19:09:00Z</lastmod>
+  <lastmod>2017-04-12T19:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ipython.xml</loc>
@@ -27,27 +23,27 @@
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/jupyter.xml</loc>
-  <lastmod>2017-03-15T19:19:00Z</lastmod>
+  <lastmod>2017-03-20T21:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/kaggle.xml</loc>
   <lastmod>2017-03-01T16:47:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/marine-mammal.xml</loc>
-  <lastmod>2017-03-15T19:09:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ocean-color.xml</loc>
-  <lastmod>2017-03-15T19:19:00Z</lastmod>
+  <lastmod>2017-04-12T19:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/optical-water-type.xml</loc>
-  <lastmod>2017-03-15T19:19:00Z</lastmod>
+  <lastmod>2017-03-20T21:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/pandas.xml</loc>
-  <lastmod>2017-03-15T19:09:00Z</lastmod>
+  <lastmod>2017-04-03T14:34:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/pymc3.xml</loc>
+  <lastmod>2017-04-12T19:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/titanic.xml</loc>
@@ -55,14 +51,14 @@
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/xarray.xml</loc>
-  <lastmod>2017-03-01T20:53:00Z</lastmod>
+  <lastmod>2017-03-20T21:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/rss.xml</loc>
-  <lastmod>2017-03-15T19:19:00Z</lastmod>
+  <lastmod>2017-04-12T19:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/sitemap.xml</loc>
-  <lastmod>2017-03-15T19:19:00Z</lastmod>
+  <lastmod>2017-04-12T19:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>
