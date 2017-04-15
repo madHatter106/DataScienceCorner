@@ -13,3 +13,5 @@ posts/\.ipynb_checkpoints/
 *.dir
 
 *.db
+
+*.log
