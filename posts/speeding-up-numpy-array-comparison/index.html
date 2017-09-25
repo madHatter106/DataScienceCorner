@@ -6,17 +6,19 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Speeding up numpy array comparison | Erdem Karaköylü 's DS corner</title>
+<title>Faster comparison of two Numpy arrays | Erdem Karaköylü 's DS corner</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://madhatter106.github.io/DataScienceCorner/posts/speeding-up-numpy-array-comparison/">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Erdem Karaköylü">
 <meta property="og:site_name" content="Erdem Karaköylü 's DS corner">
-<meta property="og:title" content="Speeding up numpy array comparison">
+<meta property="og:title" content="Faster comparison of two Numpy arrays">
 <meta property="og:url" content="https://madhatter106.github.io/DataScienceCorner/posts/speeding-up-numpy-array-comparison/">
 <meta property="og:description" content="This short post details an easy way to speed up array comparison. My problem was that I had to compare two 3D arrays, A and B, These arrays are different only in their first dimension, and have equal ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2017-09-25T10:52:36-04:00">
+<meta property="article:tag" content="array hashing">
+<meta property="article:tag" content="Numpy">
 </head>
 <body>
     <section class="social"><ul>
@@ -30,7 +32,7 @@ article: http://ogp.me/ns/article#
 
         </ul></section><section class="page-content"><div class="content" rel="main">
     <div class="post">
-        <h1 class="p-name entry-title" itemprop="headline name">Speeding up numpy array comparison</h1>
+        <h1 class="p-name entry-title" itemprop="headline name">Faster comparison of two Numpy arrays</h1>
 
         <div class="meta">
             <div class="authordate">
@@ -40,7 +42,14 @@ article: http://ogp.me/ns/article#
         <a href="index.ipynb" id="sourcelink">Source</a>
 
             </div>
-            
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../../categories/array-hashing/" rel="tag">array hashing</a></li>
+           <li><a class="tag p-category" href="../../categories/numpy/" rel="tag">Numpy</a></li>
+        </ul>
+</div>
+
         </div>
         <div class="body">
             <div tabindex="-1" id="notebook" class="border-box-sizing">
@@ -271,19 +280,6 @@ Numpy: 1.13.1
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>

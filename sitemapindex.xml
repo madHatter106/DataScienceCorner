@@ -6,6 +6,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/array-hashing.xml</loc>
+  <lastmod>2017-09-25T17:50:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/bayesian-regression.xml</loc>
   <lastmod>2017-09-25T17:39:00Z</lastmod>
  </sitemap>
@@ -28,6 +32,10 @@
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/kaggle.xml</loc>
   <lastmod>2017-09-25T17:39:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://madhatter106.github.io/DataScienceCorner/categories/numpy.xml</loc>
+  <lastmod>2017-09-25T17:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ocean-color.xml</loc>
@@ -55,10 +63,10 @@
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/rss.xml</loc>
-  <lastmod>2017-09-25T17:39:00Z</lastmod>
+  <lastmod>2017-09-25T17:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/DataScienceCorner/sitemap.xml</loc>
-  <lastmod>2017-09-25T17:39:00Z</lastmod>
+  <lastmod>2017-09-25T17:50:00Z</lastmod>
  </sitemap>
 </sitemapindex>
