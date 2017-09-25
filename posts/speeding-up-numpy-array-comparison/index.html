@@ -5,43 +5,45 @@ article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="A blog about thoughts and games with data">
 <meta name="viewport" content="width=device-width">
-<title>Erdem Karaköylü 's DS corner | Erdem Karaköylü 's DS corner</title>
-<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="https://madhatter106.github.io/DataScienceCorner/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><style>
-    div.input_prompt {
-      display: none;
-    }
-    </style>
+<title>Speeding up numpy array comparison | Erdem Karaköylü 's DS corner</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://madhatter106.github.io/DataScienceCorner/posts/speeding-up-numpy-array-comparison/">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Erdem Karaköylü">
+<meta property="og:site_name" content="Erdem Karaköylü 's DS corner">
+<meta property="og:title" content="Speeding up numpy array comparison">
+<meta property="og:url" content="https://madhatter106.github.io/DataScienceCorner/posts/speeding-up-numpy-array-comparison/">
+<meta property="og:description" content="This short post details an easy way to speed up array comparison. My problem was that I had to compare two 3D arrays, A and B, These arrays are different only in their first dimension, and have equal ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-09-25T10:52:36-04:00">
 </head>
 <body>
     <section class="social"><ul>
-<li><a href="#" title="Home"><i class="icon-home"></i></a></li>
-            <li><a href="archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+<li><a href="../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
             <li><a href="https://www.linkedin.com/in/erdem-karak%C3%B6yl%C3%BC-49487455" title="About me"><i class="icon-user"></i></a></li>
             <li><a href="https://twitter.com/grayWolfDC" title="My Twitter"><i class="icon-twitter"></i></a></li>
             <li><a href="https://github.com/madHatter106" title="My Github"><i class="icon-github"></i></a></li>
 
         </ul></section><section class="page-content"><div class="content" rel="main">
-        <div class="post">
-            <h1 class="title"><a href="posts/speeding-up-numpy-array-comparison/">Speeding up numpy array comparison</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2017-09-25T10:52:36-04:00">2017-09-25 10:52</time>
-</div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/posts/speeding-up-numpy-array-comparison/"></div>
-<script src="https://apis.google.com/js/plusone.js"></script>
-</div>
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">Speeding up numpy array comparison</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2017-09-25T10:52:36-04:00">2017-09-25 10:52</time>
             
+                      |  
+        <a href="index.ipynb" id="sourcelink">Source</a>
+
             </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
+            
+        </div>
+        <div class="body">
+            <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered">
@@ -285,218 +287,22 @@ Numpy: 1.13.1
     </div>
   </div>
 
-            </div>
         </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/">Bayesian Approach to Chlorophyll Estimation from Satellite Remote Sensing</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2017-04-10T12:41:55-05:00">2017-04-10 12:41</time>
-</div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/"></div>
-<script src="https://apis.google.com/js/plusone.js"></script>
-</div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/bayesian-regression/" rel="tag">bayesian regression</a></li>
-           <li><a class="tag p-category" href="categories/chlorophyll/" rel="tag">chlorophyll</a></li>
-           <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
-           <li><a class="tag p-category" href="categories/pymc3/" rel="tag">pymc3</a></li>
+                <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/" rel="prev" title="Bayesian Approach to Chlorophyll Estimation from Satellite Remote Sensing">Previous post</a>
+            </li>
         </ul>
+<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="https://madhatter106.github.io/DataScienceCorner/posts/speeding-up-numpy-array-comparison/" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This post describes the use of bayesian polynomial regression to estimate chlorophyll from remote sensing reflectance; the output is contrasted to that obtained via the frequentist ordinary least squares regression.</p>
-<p>Chlorophyll is estimated from ocean color remote sensing data  using one of two main types of algorithms; semi-analytical or empirical. The latter is a polynomial model, where the input is a ratio of bands and the coefficients are obtained via ordinary least squares fitting. These models are usually more successful than their semi-analytical counterparts and as a result are at the forefront of the operational algorithmic arsenal used by the Ocean Biology Processing Group at NASA Goddard. </p>
-<p class="more"><a href="posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/getting-nomadata-into-a-pandas-dataframe/">Getting NOMAData into a Pandas DataFrame</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2017-03-15T14:10:25-04:00">2017-03-15 14:10</time>
-</div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/posts/getting-nomadata-into-a-pandas-dataframe/"></div>
-<script src="https://apis.google.com/js/plusone.js"></script>
-</div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/chlorophyll/" rel="tag">chlorophyll</a></li>
-           <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
-           <li><a class="tag p-category" href="categories/pandas/" rel="tag">pandas</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this post, I'm going to briefly describe how a I download the <a href="https://seabass.gsfc.nasa.gov/wiki/NOMAD">NASA bio-Optical Marine Algorithm Dataset or NOMAD</a> created for algorithm development, extract the data I need and store it all neatly in a Pandas DataFrame. Here I use the latest dataset, NOMAD v.2, created in 2008.
-</p>
-<p class="more"><a href="posts/getting-nomadata-into-a-pandas-dataframe/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/">XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part II</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2017-02-20T14:30:43-05:00">2017-02-20 14:30</time>
-</div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/"></div>
-<script src="https://apis.google.com/js/plusone.js"></script>
-</div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/jupyter/" rel="tag">jupyter</a></li>
-           <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
-           <li><a class="tag p-category" href="categories/xarray/" rel="tag">xarray</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In a <a href="https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/">previous post</a>, I introduced xarray with some simple manipulation and data plotting. In this super-short post, I'm going to do some more manipulation, using multiple input files to create a new dimension, reorganize the data and store them in multiple output files. All but with a few lines of code.
-</p>
-<p class="more"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/">XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part I</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2017-02-20T11:16:55-05:00">2017-02-20 11:16</time>
-</div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/"></div>
-<script src="https://apis.google.com/js/plusone.js"></script>
-</div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/jupyter-notebook/" rel="tag">Jupyter notebook</a></li>
-           <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
-           <li><a class="tag p-category" href="categories/xarray/" rel="tag">xarray</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>With this post I explore an alternative to ol' numpy; <a href="http://xarray.pydata.org/en/stable/index.html">xarray</a>. Numpy is still running under the hood but this very handy library applies the <a href="http://pandas.pydata.org/">pandas</a> concept of labeled dimension to large N-dimension arrays prevalent in scientific computing. The result is an ease of manipulation of dimensions without having to guess or remember what they correspond to. Moreover, xarray plays nicely with two other relatively new libraries:</p>
-<ul>
-<li>
-<a href="http://dask.pydata.org/en/latest/">dask</a>, which enables out of core computation so that memory availability becomes much less an issue with large data sets; </li>
-<li>
-<a href="http://geo.holoviews.org/">GeoViews</a>, a library sitting on top of <a href="http://holoviews.org/">HoloViews</a>. The latter eases the burden of data visualization by offering an unusual approach that does away with step-by-step graphical coding and allows the user to concentrate how the data organization instead. This results in a substantial reduction code written, which makes data analysis much cleaner and less bug-prone. GeoViews sits on top of the visualization package HoloViews, with an emphasis on geophysical data. It's also my first good-bye to the aging (10+ years) matplotlib library. It'll still be handy now and then, but it's time to try new things. <p class="more"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/">Read more…</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/titanic-i-cleanup/">Titanic Diaries - Part I: Data Dusting</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2017-01-09T16:46:09-05:00">2017-01-09 16:46</time>
-</div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/posts/titanic-i-cleanup/"></div>
-<script src="https://apis.google.com/js/plusone.js"></script>
-</div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/ipython/" rel="tag">Ipython</a></li>
-           <li><a class="tag p-category" href="categories/jupyter-notebook/" rel="tag">Jupyter notebook</a></li>
-           <li><a class="tag p-category" href="categories/kaggle/" rel="tag">kaggle</a></li>
-           <li><a class="tag p-category" href="categories/titanic/" rel="tag">titanic</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In most data science tutorials I have seen, a lot of the data clean-up is done in what seems to me casually, an annoying obstacle to get to the sexy Machine Learning bit. I was curious to see what if any difference it made in my Kaggle ranking if I used a somewhat more cautious approach in my data cleanup. My approach was to dumbly follow <a href="https://www.datacamp.com/community/open-courses/kaggle-python-tutorial-on-machine-learning#gs.EkI78Vw">Datacamp's tutorial</a> and submit my test set labels as a benchmark. The second step is then to use a more elaborate data cleanup process and see whether taking the extra time actually moves my ranking up, or maybe down.
-</p>
-<p class="more"><a href="posts/titanic-i-cleanup/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-    
-            
-
+    </div>
                      <footer id="footer"><p>Contents © 2017         <a href="mailto:erdemk@protonmail.com">Erdem Karaköylü</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
-    </section><script src="assets/js/all-nocdn.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+    </section><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
 <a class="addthis_button_more"><i class="icon-share-sign icon-2x"></i>    Share</a>
 <ul>
 <li>

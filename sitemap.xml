@@ -7,102 +7,94 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/</loc>
-  <lastmod>2017-01-16T21:23:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/2017/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/archive.html</loc>
-  <lastmod>2017-04-09T15:03:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/</loc>
-  <lastmod>2017-04-09T15:00:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/bayesian-regression/</loc>
-  <lastmod>2017-04-09T15:00:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/chlorophyll/</loc>
-  <lastmod>2017-03-15T19:23:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ipython/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/jupyter-notebook/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/jupyter/</loc>
-  <lastmod>2017-02-28T15:27:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/kaggle/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/ocean-color/</loc>
-  <lastmod>2017-02-20T16:48:00Z</lastmod>
- </url>
- <url>
-  <loc>https://madhatter106.github.io/DataScienceCorner/categories/optical-water-type/</loc>
-  <lastmod>2017-02-28T15:27:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/pandas/</loc>
-  <lastmod>2017-03-15T19:23:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/pymc3/</loc>
-  <lastmod>2017-04-09T15:00:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/titanic/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/xarray/</loc>
-  <lastmod>2017-02-20T16:48:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/galleries/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/listings/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/</loc>
-  <lastmod>2017-04-12T19:38:00Z</lastmod>
- </url>
- <url>
-  <loc>https://madhatter106.github.io/DataScienceCorner/posts/bayesian-approach-to-empirical-chlorophyll-estimation-from-ocean-color/</loc>
-  <lastmod>2017-04-09T15:00:00Z</lastmod>
- </url>
- <url>
-  <loc>https://madhatter106.github.io/DataScienceCorner/posts/clustering-optical-water-types/</loc>
-  <lastmod>2017-02-19T02:59:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/getting-nomadata-into-a-pandas-dataframe/</loc>
-  <lastmod>2017-03-15T19:23:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/speeding-up-numpy-array-comparison/</loc>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/titanic-i-cleanup/</loc>
-  <lastmod>2017-01-14T20:28:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/</loc>
-  <lastmod>2017-02-20T16:48:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/</loc>
-  <lastmod>2017-02-28T15:27:00Z</lastmod>
+  <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
 </urlset>
