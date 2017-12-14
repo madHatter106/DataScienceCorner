@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/archive.html</loc>
-  <lastmod>2017-09-25T17:39:00Z</lastmod>
+  <lastmod>2017-12-14T22:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/categories/</loc>
@@ -82,12 +82,20 @@
   <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/automatically-checking-changes-in-my-citizenship-case-status/</loc>
+  <lastmod>2017-12-14T22:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/</loc>
   <lastmod>2017-09-25T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/getting-nomadata-into-a-pandas-dataframe/</loc>
   <lastmod>2017-09-25T17:39:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://madhatter106.github.io/DataScienceCorner/posts/relating-principle-components-to-the-data-whence-they-came/</loc>
+  <lastmod>2017-12-14T22:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://madhatter106.github.io/DataScienceCorner/posts/speeding-up-numpy-array-comparison/</loc>

@@ -195,8 +195,8 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
             <span class="n">myChlModl</span><span class="o">+=</span> <span class="n">coeff</span> <span class="o">*</span> <span class="n">ocxRatioMock</span><span class="o">**</span><span class="n">i</span>
         <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ocxRatioMock</span><span class="p">,</span><span class="n">myChlModl</span><span class="p">,</span><span class="s1">'m'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'OLS'</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ocxRatioMock</span><span class="p">,</span><span class="n">chlBayes</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Bayesian OC4'</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">r'$log_</span><span class="si">{10}</span><span class="s1">\frac{max(Rrs\left(\lambda_</span><span class="si">{blue}</span><span class="s1">\right))}{Rrs\left(\lambda_</span><span class="si">{green}</span><span class="s1">\right)}$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">r'$log_</span><span class="si">{10}</span><span class="s1">\left(chlor_a\right)$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$log_</span><span class="si">{10}</span><span class="s1">\frac{max(Rrs\left(\lambda_</span><span class="si">{blue}</span><span class="s1">\right))}{Rrs\left(\lambda_</span><span class="si">{green}</span><span class="s1">\right)}$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$log_</span><span class="si">{10}</span><span class="s1">\left(chlor_a\right)$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Posterior Predictive Check </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">titleTail</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
@@ -247,7 +247,10 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[6]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -407,7 +410,10 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
 Int64Index: 1016 entries, 0 to 4458
@@ -460,7 +466,10 @@ memory usage: 91.3 KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -528,7 +537,10 @@ memory usage: 91.3 KB
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[10]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -598,7 +610,10 @@ memory usage: 91.3 KB
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[11]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -686,7 +701,10 @@ memory usage: 91.3 KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
 Int64Index: 1016 entries, 0 to 4458
@@ -736,7 +754,10 @@ memory usage: 27.8 KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -777,7 +798,10 @@ memory usage: 27.8 KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[ 0.24120683 -3.10789592  3.1769156  -0.76503841 -1.38077655]
 </pre>
@@ -861,7 +885,7 @@ memory usage: 27.8 KB
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">r'$ log_</span><span class="si">{10}</span><span class="s1">$ (measured chl)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$ log_</span><span class="si">{10}</span><span class="s1">$ (measured chl)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -873,7 +897,10 @@ memory usage: 27.8 KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -902,9 +929,9 @@ memory usage: 27.8 KB
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"mse, this fit: </span><span class="si">%.2f</span><span class="s2"> "</span> <span class="o">%</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlMdlFreq</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">r"r^2, this fit: </span><span class="si">%.2f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlMdlFreq</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">"r^2, this fit: </span><span class="si">%.2f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlMdlFreq</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"mse, OC4v6: </span><span class="si">%.2f</span><span class="s2"> "</span> <span class="o">%</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlMdlOc4v6</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">r"r^2, OC4v6: </span><span class="si">%.2f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlMdlOc4v6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">"r^2, OC4v6: </span><span class="si">%.2f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlMdlOc4v6</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -916,7 +943,10 @@ memory usage: 27.8 KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>mse, this fit: 0.08 
 r^2, this fit: 0.83
@@ -953,7 +983,7 @@ First I have to specify some priors around the coefficients. I'll assume weakly 
 <span class="n">normDataSort</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">normData</span><span class="p">)</span>
 <span class="n">logChlSort</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">lbl</span> <span class="o">=</span> <span class="s1">r'$log_</span><span class="si">{10}</span><span class="s1">(chl)$'</span>
+<span class="n">lbl</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'$log_</span><span class="si">{10}</span><span class="s1">(chl)$'</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">normDataSort</span><span class="p">,</span> <span class="n">logChlSort</span><span class="p">,</span><span class="s1">'ko'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span><span class="k">lbl</span>, fontsize=16)
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'normal standard values'</span><span class="p">);</span>
@@ -974,7 +1004,10 @@ First I have to specify some priors around the coefficients. I'll assume weakly 
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1041,7 +1074,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Optimization terminated successfully.
          Current function value: 203.732359
@@ -1053,7 +1089,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|██████████| 10000/10000 [01:45&lt;00:00, 95.10it/s]
 </pre>
@@ -1095,7 +1134,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1135,7 +1177,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1177,7 +1222,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[23]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1267,7 +1315,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1297,7 +1348,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1344,7 +1398,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1387,7 +1444,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|██████████| 1000/1000 [00:17&lt;00:00, 56.44it/s]
 </pre>
@@ -1416,7 +1476,10 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1465,7 +1528,10 @@ Let's calculate metrics for this model. The majority of the training data falls 
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>mse, this fit: 0.08 
 r^2, this fit: 0.83
@@ -1515,7 +1581,10 @@ r^2, Bayes chl: 0.83
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 59 entries, 0 to 58
@@ -1579,7 +1648,10 @@ memory usage: 5.6+ KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|██████████| 1000/1000 [00:17&lt;00:00, 58.08it/s]
 </pre>
@@ -1609,7 +1681,10 @@ memory usage: 5.6+ KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1649,7 +1724,10 @@ memory usage: 5.6+ KB
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>mse, this fit: 0.10 
 r^2, this fit: 0.76
@@ -1687,7 +1765,7 @@ That's it for this post. But that's not it for this dataset. The diagnostics dis
                 <a href="../getting-nomadata-into-a-pandas-dataframe/" rel="prev" title="Getting NOMAData into a Pandas DataFrame">Previous post</a>
             </li>
             <li class="next">
-                <a href="../speeding-up-numpy-array-comparison/" rel="next" title="Speeding up numpy array comparison">Next post</a>
+                <a href="../speeding-up-numpy-array-comparison/" rel="next" title="Faster comparison of two Numpy arrays">Next post</a>
             </li>
         </ul>
 <script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="https://madhatter106.github.io/DataScienceCorner/posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
