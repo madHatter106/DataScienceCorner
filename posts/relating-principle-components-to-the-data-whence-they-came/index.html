@@ -52,14 +52,15 @@ article: http://ogp.me/ns/article#
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When preparing a dataset for machine learning, a common step is to reduce dimensions using <a href="https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/">principal component analysis (PCA)</a>. This is often necessary when multi-collinearity is an issue. Multi-collinearity is often encountered in multi- and hyper-spectral satellite data, where individual channels do not add much information to that carried by their neighbors.</p>
-<p>Here I use data from the <a href="http://hico.coas.oregonstate.edu/">Hyperspectral Imager for the Coastal Ocean (HICO)</a>, with several thousand observations.</p>
+<p>Here I use data from the <a href="http://hico.coas.oregonstate.edu/">Hyperspectral Imager for the Coastal Ocean (HICO)</a>, with several thousand observations.
+<!--TEASER END--></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [28]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
@@ -77,6 +78,25 @@ article: http://ogp.me/ns/article#
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/madhatter106/anaconda3/lib/python3.6/site-packages/cmocean/tools.py:76: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  if not mpl.cbook.is_string_like(rgbin[0]):
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

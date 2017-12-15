@@ -53,492 +53,13 @@ article: http://ogp.me/ns/article#
 <p>In this post I detail the steps of the script, which does the status check for me and shoots me an e-mail when detecting a change. I then show how I made it into a cron job so that it would run automatically on a schedule of my choosing.</p>
 <p>Here I leverage <a href="http://www.seleniumhq.org/projects/webdriver/">SELENIUM</a>, <a href="https://www.crummy.com/software/BeautifulSoup/">BEAUTIFULSOUP</a>, and <a href="https://docs.python.org/3/library/smtplib.html">SMTPLIB</a> and <a href="https://pypi.python.org/pypi/python-crontab">PYTHON-CRONTAB</a>.</p>
 <p>Note that building my automaton requires scouting the pages it needs to navigate to identify the specific elements it needs to interact with; in this case only a handful.
-<!--TEASER END--></p>
-
+</p>
+<p class="more"><a href="posts/automatically-checking-changes-in-my-citizenship-case-status/">Read more…</a></p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">selenium</span> <span class="k">import</span> <span class="n">webdriver</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">Soup</span>
-<span class="kn">from</span> <span class="nn">shutil</span> <span class="k">import</span> <span class="n">which</span>
-<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">IPython</span><span class="o">,</span> <span class="nn">platform</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Setup: {platform.machine()} running {" ".join(platform.linux_distribution()[:2])}'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Python: </span><span class="si">{sys.version[:5]}</span><span class="se">\n</span><span class="s1">IPython: </span><span class="si">{IPython.__version__}</span><span class="s1">'</span><span class="p">)</span>
-</pre></div>
-
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Setup: x86_64 running debian stretch/sid
-Python: 3.6.3
-IPython: 6.1.0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The last step I went through in my process is an interview with a case officer. Thus the phrase that if altered on my status page should indicate a a change in my status is "we scheduled an interview". Let's first store that in a token...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">token</span> <span class="o">=</span> <span class="s1">'we scheduled an interview'</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, I use <a href="http://phantomjs.org/">phantomjs</a> to avoid the browser window. <strong>phantompath</strong> gives the location of phantomjs on my computer. If you prefer chromedriver <a href="https://blog.miguelgrinberg.com/post/using-headless-chrome-with-selenium">Miguel Grinberg (the Flask guy) has a recipe</a> for the cost of a couple extra lines.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">phantompath</span> <span class="o">=</span> <span class="n">which</span><span class="p">(</span><span class="s1">'phantomjs'</span><span class="p">)</span>
-<span class="n">browser</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">PhantomJS</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="n">phantompath</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Navigate to the USCIS landing page...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">browser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://egov.uscis.gov/casestatus/landing.do'</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... find the input box to enter my case number, stored in the variable case_num...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">caseNo</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">'receipt_number'</span><span class="p">)</span>
-<span class="n">caseNo</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">case_num</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... find the button to initiate the lookup and click...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">srchButtn</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">find_element_by_name</span><span class="p">(</span><span class="s1">'initCaseSearch'</span><span class="p">)</span>
-<span class="n">srchButtn</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... now we're on the status page, get the page source and parse it with BeautifulSoup</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pageSrc</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">page_source</span>
-<span class="n">pageSoup</span> <span class="o">=</span> <span class="n">Soup</span><span class="p">(</span><span class="n">pageSrc</span><span class="p">,</span> <span class="s1">'lxml'</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... from inspecting the page source, I know that the text I'm looking for is under tag "p"...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">targetSection</span> <span class="o">=</span> <span class="n">pageSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'p'</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... and is the first item yielded by the child of targetSection (a generator)...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">targeText</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">targetSection</span><span class="o">.</span><span class="n">children</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... sampling some of the text returns...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">targeText</span><span class="p">[</span><span class="mi">20</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>' we scheduled an interview for your Form N-400, Application for Naturalization ,'</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... well, the status still reflects the interview, so nothing happens after this and the process goes back to sleep. However, the rest of the code shows the next steps in the case of change. Namely</p>
-<ul>
-<li>craft message including the new status text</li>
-<li>intantiate an SMTP object</li>
-<li>call the SMTP object's sendmail method to send the email from/to the appropriate sender/receiver pair, in my case they are one and the same...</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">targeText</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="n">f</span><span class="s1">'USCIS CASE UPDATE: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{targeText}</span><span class="s1">'</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">smtpObj</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">'localhost'</span><span class="p">)</span>
-        <span class="n">smtpObj</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">from_</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-    <span class="k">except</span> <span class="n">SMTPException</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Problem sending email"</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The full source code is available at the end of the page. I saved this code as <strong>CheckCaseStatus.py</strong>, and the snippets below show how I add it to my cron tasks.</p>
-<p>First import CronTab and instantiate a cron object.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">crontab</span> <span class="k">import</span> <span class="n">CronTab</span>
-
-<span class="n">myCron</span> <span class="o">=</span> <span class="n">CronTab</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I'm the only user on my computer so setting user=True is sufficient. On a multi-user setup, an actual username should be specified. Now add running the CheckCaseStatus.py as a new job to the cron instance...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">runpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'~/DEV/MyCronJobs/CheckCaseStatus.py'</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">myCron</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s1">'python CheckCaseStatus.py'</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... set the running schedule - check for a change every 5 days - and save...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">job</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">every</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">myCron</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># CheckCaseStatus.py</span>
-<span class="kn">from</span> <span class="nn">selenium</span> <span class="k">import</span> <span class="n">webdriver</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">Soup</span>
-<span class="kn">import</span> <span class="nn">smtplib</span>
-<span class="kn">from</span> <span class="nn">shutil</span> <span class="k">import</span> <span class="n">which</span>
-
-<span class="k">def</span> <span class="nf">check_uscis_page</span><span class="p">(</span><span class="n">caseNum</span><span class="p">,</span> <span class="n">phantompath</span><span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">    opens uscis webpage in the background (phantomjs)</span>
-<span class="sd">    navigates to case status page (requires case number)</span>
-<span class="sd">    """</span>
-    <span class="n">browser</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">PhantomJS</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="n">phantompath</span><span class="p">)</span>
-    <span class="n">browser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://egov.uscis.gov/casestatus/landing.do'</span><span class="p">)</span>
-    <span class="n">caseNo</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">'receipt_number'</span><span class="p">)</span>
-    <span class="n">caseNo</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">caseNum</span><span class="p">)</span>
-    <span class="n">srchButtn</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">find_element_by_name</span><span class="p">(</span><span class="s1">'initCaseSearch'</span><span class="p">)</span>
-    <span class="n">srchButtn</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
-    <span class="n">pageSrc</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">pageSource</span>
-    <span class="n">pageSoup</span> <span class="o">=</span> <span class="n">Soup</span><span class="p">(</span><span class="n">pageSrc</span><span class="p">,</span> <span class="s1">'lxml'</span><span class="p">)</span>
-    <span class="n">browser</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">targetSection</span> <span class="o">=</span> <span class="n">pageSoup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'p'</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">targetSection</span><span class="o">.</span><span class="n">children</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="k">def</span> <span class="nf">check_update</span><span class="p">(</span><span class="n">targeText</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">targeText</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-
-<span class="k">def</span> <span class="nf">shoot_email</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">from_</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
-    <span class="n">from_</span> <span class="o">=</span> <span class="n">from_</span>
-    <span class="n">to</span> <span class="o">=</span> <span class="p">[</span><span class="n">to</span><span class="p">]</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="n">f</span><span class="s1">'USCIS CASE UPDATE: </span><span class="se">\n</span><span class="s1"> </span><span class="si">{text}</span><span class="s1">'</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">smtpObj</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">'localhost'</span><span class="p">)</span>
-        <span class="n">smtpObj</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">from_</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-    <span class="k">except</span> <span class="n">SMTPException</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Problem sending email"</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-    <span class="n">myEmail</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'MYGMAIL'</span><span class="p">)</span>
-    <span class="n">case</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'USCIS_CASE_NO'</span><span class="p">)</span>
-    <span class="n">phantompath</span> <span class="o">=</span> <span class="n">which</span><span class="p">(</span><span class="s1">'phantomjs'</span><span class="p">)</span>   
-    <span class="n">retrievedText</span> <span class="o">=</span> <span class="n">check_uscis_page</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">phantompath</span><span class="p">)</span>
-    <span class="k">if</span>  <span class="n">check_update</span><span class="p">(</span><span class="n">retrievedText</span><span class="p">,</span> <span class="s1">'we scheduled an interview'</span><span class="p">):</span>
-        <span class="n">shoot_email</span><span class="p">(</span><span class="n">retrievedText</span><span class="p">,</span> <span class="n">myEmail</span><span class="p">,</span> <span class="n">myEmail</span><span class="p">)</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># CronScheduler.py</span>
-<span class="kn">from</span> <span class="nn">crontab</span> <span class="k">import</span> <span class="n">CronTab</span>
-
-<span class="n">myCron</span> <span class="o">=</span> <span class="n">CronTab</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">job</span> <span class="o">=</span> <span class="n">myCron</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s1">'python CheckCaseStatus.py'</span><span class="p">)</span>
-<span class="n">job</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">every</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">myCron</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Done, and all that in 50 or so lines. The last thing left is to <em>python CronScheduler.py</em> to get the program going.</p>
-<p>Happy hacking!</p>
-
-</div>
-</div>
-</div>
-    </div>
-  </div>
-
             </div>
         </div>
         <div class="post">
@@ -563,14 +84,15 @@ IPython: 6.1.0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When preparing a dataset for machine learning, a common step is to reduce dimensions using <a href="https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/">principal component analysis (PCA)</a>. This is often necessary when multi-collinearity is an issue. Multi-collinearity is often encountered in multi- and hyper-spectral satellite data, where individual channels do not add much information to that carried by their neighbors.</p>
-<p>Here I use data from the <a href="http://hico.coas.oregonstate.edu/">Hyperspectral Imager for the Coastal Ocean (HICO)</a>, with several thousand observations.</p>
+<p>Here I use data from the <a href="http://hico.coas.oregonstate.edu/">Hyperspectral Imager for the Coastal Ocean (HICO)</a>, with several thousand observations.
+<!--TEASER END--></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [28]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
@@ -588,6 +110,25 @@ IPython: 6.1.0
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/madhatter106/anaconda3/lib/python3.6/site-packages/cmocean/tools.py:76: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  if not mpl.cbook.is_string_like(rgbin[0]):
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
