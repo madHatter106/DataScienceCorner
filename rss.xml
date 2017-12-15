@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Erdem Karaköylü 's DS corner</title><link>https://madhatter106.github.io/</link><description>A blog about thoughts and games with data</description><atom:link href="https://madhatter106.github.io/DataScienceCorner/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 14 Dec 2017 22:45:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Automatically Checking Changes in my Citizenship Case Status</title><link>https://madhatter106.github.io/DataScienceCorner/posts/automatically-checking-changes-in-my-citizenship-case-status/</link><dc:creator>Erdem Karaköylü</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Erdem Karaköylü 's DS corner</title><link>https://madhatter106.github.io/</link><description>A blog about thoughts and games with data</description><atom:link href="https://madhatter106.github.io/DataScienceCorner/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 15 Dec 2017 16:27:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Automatically Checking Changes in my Citizenship Case Status</title><link>https://madhatter106.github.io/DataScienceCorner/posts/automatically-checking-changes-in-my-citizenship-case-status/</link><dc:creator>Erdem Karaköylü</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;I have currently applied for citizenship. It's a long process without a set schedule. So rather than waste time going to the website, enter my case number, navigate to the status page, and check if there is any change, I decided to automate the steps. So I wrote a cron job to check whether there was any changes to my status and if so to shoot me an e-mail.
-Here I leverage &lt;a href="http://www.seleniumhq.org/projects/webdriver/"&gt;SELENIUM&lt;/a&gt;, &lt;a href="https://www.crummy.com/software/BeautifulSoup/"&gt;BEAUTIFULSOUP&lt;/a&gt;, and &lt;a href="https://docs.python.org/3/library/smtplib.html"&gt;SMTPLIB&lt;/a&gt; and &lt;a href="https://pypi.python.org/pypi/python-crontab"&gt;PYTHON-CRONTAB&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Note that building my automaton requires scouting the pages it needs to navigate to identify the specific elements it needs to interact with; in this case only a handful.&lt;/p&gt;
-&lt;p&gt;I use python 3.6.&lt;/p&gt;
-&lt;p&gt;First the necessary imports...&lt;/p&gt;
+&lt;p&gt;I am currently in the process of acquiring my US citizenship. It's a long process without a set schedule. I found myself frequently visiting the USCIS status page to see if any update had been posted. After a few iterations I grew tired and rather than waste time going to the website, enter my case number, navigate to the status page, and check if there were any changes, I decided to automate these steps with a python script.&lt;/p&gt;
+&lt;p&gt;In this post I detail the steps of the script, which does the status check for me and shoots me an e-mail when detecting a change. I then show how I made it into a cron job so that it would run automatically on a schedule of my choosing.&lt;/p&gt;
+&lt;p&gt;Here I leverage &lt;a href="http://www.seleniumhq.org/projects/webdriver/"&gt;SELENIUM&lt;/a&gt;, &lt;a href="https://www.crummy.com/software/BeautifulSoup/"&gt;BEAUTIFULSOUP&lt;/a&gt;, and &lt;a href="https://docs.python.org/3/library/smtplib.html"&gt;SMTPLIB&lt;/a&gt; and &lt;a href="https://pypi.python.org/pypi/python-crontab"&gt;PYTHON-CRONTAB&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note that building my automaton requires scouting the pages it needs to navigate to identify the specific elements it needs to interact with; in this case only a handful.
+&lt;!--TEASER END--&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -21,13 +21,35 @@ Here I leverage &lt;a href="http://www.seleniumhq.org/projects/webdriver/"&gt;SE
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;selenium&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;Soup&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;shutil&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;which&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;IPython&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;platform&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'Setup: {platform.machine()} running {" ".join(platform.linux_distribution()[:2])}'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'Python: &lt;/span&gt;&lt;span class="si"&gt;{sys.version[:5]}&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;IPython: &lt;/span&gt;&lt;span class="si"&gt;{IPython.__version__}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Setup: x86_64 running debian stretch/sid
+Python: 3.6.3
+IPython: 6.1.0
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -291,7 +313,8 @@ Here I leverage &lt;a href="http://www.seleniumhq.org/projects/webdriver/"&gt;SE
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;The full source code is available at the end of the page. I have saved in a file named &lt;strong&gt;CheckCaseStatus.py&lt;/strong&gt;, which I will provide to my crontab as shown below. First import CronTab and instantiate a cron object.&lt;/p&gt;
+&lt;p&gt;The full source code is available at the end of the page. I saved this code as &lt;strong&gt;CheckCaseStatus.py&lt;/strong&gt;, and the snippets below show how I add it to my cron tasks.&lt;/p&gt;
+&lt;p&gt;First import CronTab and instantiate a cron object.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -315,7 +338,7 @@ Here I leverage &lt;a href="http://www.seleniumhq.org/projects/webdriver/"&gt;SE
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;I'm the only user on my computer so it's easier to specify user=True, which then points to the current user. If needed, an actual username can be specified. Now add running the CheckCaseStatus.py as a new job to the cron instance...&lt;/p&gt;
+&lt;p&gt;I'm the only user on my computer so setting user=True is sufficient. On a multi-user setup, an actual username should be specified. Now add running the CheckCaseStatus.py as a new job to the cron instance...&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -420,7 +443,7 @@ Here I leverage &lt;a href="http://www.seleniumhq.org/projects/webdriver/"&gt;SE
     &lt;span class="n"&gt;phantompath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;which&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'phantomjs'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   
     &lt;span class="n"&gt;retrievedText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;check_uscis_page&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;case&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;phantompath&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt;  &lt;span class="n"&gt;check_update&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;retrievedText&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'we scheduled an interview'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;shoot_email&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;targeText&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myEmail&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myEmail&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+        &lt;span class="n"&gt;shoot_email&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;retrievedText&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myEmail&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myEmail&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
