@@ -29,6 +29,7 @@ article: http://ogp.me/ns/article#
 
         </ul></section><section class="page-content"><div class="content" rel="main">
         <div class="post">
+<<<<<<< HEAD
             <h1 class="title"><a href="posts/bayesian-approach-to-empirical-chlorophyll-estimation-from-ocean-color/">Bayesian Approach to Empirical Chlorophyll Estimation from Ocean Color</a></h1>
             <div class="meta">
                 <div class="authordate">
@@ -36,15 +37,95 @@ article: http://ogp.me/ns/article#
 </div>
                 <div class="stats">
                             <div class="g-commentcount" data-href="/posts/bayesian-approach-to-empirical-chlorophyll-estimation-from-ocean-color/"></div>
+=======
+            <h1 class="title"><a href="posts/automatically-checking-changes-in-my-citizenship-application-status/">Automatically Checking Changes in my Citizenship ApplicationStatus</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2017-12-13T15:40:58-05:00">2017-12-13 15:40</time>
+</div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/posts/automatically-checking-changes-in-my-citizenship-application-status/"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+</div>
+            
+            </div>
+            <div class="body">
+                <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I am currently in the process of acquiring my US citizenship. It's a long process without a set schedule. I found myself frequently visiting the USCIS status page to see if any update had been posted. After a few iterations I grew tired and rather than waste time going to the website, enter my case number, navigate to the status page, and check if there were any changes, I decided to automate these steps with a python script.</p>
+<p>In this post I detail the steps of the script, which does the status check for me and shoots me an e-mail when detecting a change. I then show how I made it into a cron job so that it would run automatically on a schedule of my choosing.</p>
+<p>Here I leverage <a href="http://www.seleniumhq.org/projects/webdriver/">SELENIUM</a>, <a href="https://www.crummy.com/software/BeautifulSoup/">BEAUTIFULSOUP</a>, and <a href="https://docs.python.org/3/library/smtplib.html">SMTPLIB</a> and <a href="https://pypi.python.org/pypi/python-crontab">PYTHON-CRONTAB</a>.</p>
+<p>Note that building my automaton requires scouting the pages it needs to navigate to identify the specific elements it needs to interact with; in this case only a handful.
+</p>
+<p class="more"><a href="posts/automatically-checking-changes-in-my-citizenship-application-status/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="posts/relating-principle-components-to-the-data-whence-they-came/">Relating Principle Components To The Data Whence They Came</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2017-10-23T14:54:21-04:00">2017-10-23 14:54</time>
+</div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/posts/relating-principle-components-to-the-data-whence-they-came/"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+</div>
+            
+            </div>
+            <div class="body">
+                <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When preparing a dataset for machine learning, a common step is to reduce dimensions using <a href="https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/">principal component analysis (PCA)</a>. This is often necessary when multi-collinearity is an issue. Multi-collinearity is often encountered in multi- and hyper-spectral satellite data, where individual channels do not add much information to that carried by their neighbors.</p>
+<p>Here I use data from the <a href="http://hico.coas.oregonstate.edu/">Hyperspectral Imager for the Coastal Ocean (HICO)</a>, with several thousand observations.
+</p>
+<p class="more"><a href="posts/relating-principle-components-to-the-data-whence-they-came/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="posts/speeding-up-numpy-array-comparison/">Faster comparison of two Numpy arrays</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2017-09-25T10:52:36-04:00">2017-09-25 10:52</time>
+</div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/posts/speeding-up-numpy-array-comparison/"></div>
+>>>>>>> gh-pages
 <script src="https://apis.google.com/js/plusone.js"></script>
 </div>
                     <div itemprop="keywords" class="tags">
         <ul>
         Tags : 
+<<<<<<< HEAD
            <li><a class="tag p-category" href="categories/bayesian-regression/" rel="tag">bayesian regression</a></li>
            <li><a class="tag p-category" href="categories/chlorophyll/" rel="tag">chlorophyll</a></li>
            <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
            <li><a class="tag p-category" href="categories/pymc3/" rel="tag">pymc3</a></li>
+=======
+           <li><a class="tag p-category" href="categories/array-hashing/" rel="tag">array hashing</a></li>
+           <li><a class="tag p-category" href="categories/numpy/" rel="tag">Numpy</a></li>
+>>>>>>> gh-pages
         </ul>
 </div>
 
@@ -58,6 +139,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p>This post describes the use of bayesian polynomial regression to estimate chlorophyll from remote sensing reflectance; the output is contrasted to that obtained via the frequentist ordinary least squares regression.</p>
 <p>Chlorophyll is estimated from ocean color remote sensing data  using one of two main types of algorithms; semi-analytical or empirical. The latter is a polynomial model, where the input is a ratio of bands and the coefficients are obtained via ordinary least squares fitting. These models are usually more successful than their semi-analytical counterparts and as a result are at the forefront of the operational algorithmic arsenal used by the Ocean Biology Processing Group at NASA Goddard. </p>
 <p class="more"><a href="posts/bayesian-approach-to-empirical-chlorophyll-estimation-from-ocean-color/">Read more…</a></p>
@@ -100,6 +182,137 @@ article: http://ogp.me/ns/article#
 <p>In this post, I'm going to briefly describe how a I download the <a href="https://seabass.gsfc.nasa.gov/wiki/NOMAD">NASA bio-Optical Marine Algorithm Dataset or NOMAD</a> created for algorithm development, extract the data I need and store it all neatly in a Pandas DataFrame. Here I use the latest dataset, NOMAD v.2, created in 2008.
 </p>
 <p class="more"><a href="posts/getting-nomadata-into-a-pandas-dataframe/">Read more…</a></p>
+=======
+<p>This short post details an easy way to speed up array comparison. My problem was that I had to compare two 3D arrays, A and B, These arrays are different only in their first dimension, and have equal $2^{nd}$ and $3^{rd}$ dimensions. I needed to find out whether any of the 2D arrays contained along the first dimension of, say, A were also present along the first dimension of B. The first approach one might try is based on nested for-loops. This becomes quickly unwieldy with even moderate-sized arrays. The faster alternative is to hash the 2D data in one of the arrays and store the hash table; I prefer to do that with the smaller array for space use efficiency. The next step is to go along the first dimension of the other array, hash the data and compare. This ends up requiring only serial for-loops. Note here that the Python version is 3.6, which implements numpy ndarray hashing differently than 2.x. Note also the use of <a href="https://cito.github.io/blog/f-strings/">f-strings; a nifty new feature of python 3.6.</a>
+</p>
+<p class="more"><a href="posts/speeding-up-numpy-array-comparison/">Read more…</a></p>
+>>>>>>> gh-pages
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+        <div class="post">
+<<<<<<< HEAD
+            <h1 class="title"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/">XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part II</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2017-02-20T14:30:43-05:00">2017-02-20 14:30</time>
+</div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/"></div>
+=======
+            <h1 class="title"><a href="posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/">Bayesian Approach to Chlorophyll Estimation from Satellite Remote Sensing</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2017-04-10T12:41:55-05:00">2017-04-10 12:41</time>
+</div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/"></div>
+>>>>>>> gh-pages
+<script src="https://apis.google.com/js/plusone.js"></script>
+</div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+<<<<<<< HEAD
+           <li><a class="tag p-category" href="categories/jupyter/" rel="tag">jupyter</a></li>
+=======
+           <li><a class="tag p-category" href="categories/bayesian-regression/" rel="tag">bayesian regression</a></li>
+           <li><a class="tag p-category" href="categories/chlorophyll/" rel="tag">chlorophyll</a></li>
+>>>>>>> gh-pages
+           <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
+           <li><a class="tag p-category" href="categories/pymc3/" rel="tag">pymc3</a></li>
+        </ul>
+</div>
+
+            </div>
+            <div class="body">
+                <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
+<p>In a <a href="https://madhatter106.github.io/DataScienceCorner/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/">previous post</a>, I introduced xarray with some simple manipulation and data plotting. In this super-short post, I'm going to do some more manipulation, using multiple input files to create a new dimension, reorganize the data and store them in multiple output files. All but with a few lines of code.
+</p>
+<p class="more"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-ii/">Read more…</a></p>
+=======
+<p>This post describes the use of bayesian polynomial regression to estimate chlorophyll from remote sensing reflectance; the output is contrasted to that obtained via the frequentist ordinary least squares regression.</p>
+<p>Chlorophyll is estimated from ocean color remote sensing data  using one of two main types of algorithms; semi-analytical or empirical. The latter is a polynomial model, where the input is a ratio of bands and the coefficients are obtained via ordinary least squares fitting. These models are usually more successful than their semi-analytical counterparts and as a result are at the forefront of the operational algorithmic arsenal used by the Ocean Biology Processing Group at NASA Goddard. </p>
+<p class="more"><a href="posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/">Read more…</a></p>
+>>>>>>> gh-pages
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+        <div class="post">
+<<<<<<< HEAD
+            <h1 class="title"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/">XARRAY &amp; GEOVIEWS A new perspective on oceanographic data - part I</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2017-02-20T11:16:55-05:00">2017-02-20 11:16</time>
+</div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/"></div>
+=======
+            <h1 class="title"><a href="posts/getting-nomadata-into-a-pandas-dataframe/">Getting the NASA bio-Optical Marine Algorithm Dataset (NOMAD) into a Pandas DataFrame</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2017-03-15T14:10:25-04:00">2017-03-15 14:10</time>
+</div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/posts/getting-nomadata-into-a-pandas-dataframe/"></div>
+>>>>>>> gh-pages
+<script src="https://apis.google.com/js/plusone.js"></script>
+</div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+<<<<<<< HEAD
+           <li><a class="tag p-category" href="categories/jupyter-notebook/" rel="tag">Jupyter notebook</a></li>
+           <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
+           <li><a class="tag p-category" href="categories/xarray/" rel="tag">xarray</a></li>
+=======
+           <li><a class="tag p-category" href="categories/chlorophyll/" rel="tag">chlorophyll</a></li>
+           <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
+           <li><a class="tag p-category" href="categories/pandas/" rel="tag">pandas</a></li>
+>>>>>>> gh-pages
+        </ul>
+</div>
+
+            </div>
+            <div class="body">
+                <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
+<p>With this post I explore an alternative to ol' numpy; <a href="http://xarray.pydata.org/en/stable/index.html">xarray</a>. Numpy is still running under the hood but this very handy library applies the <a href="http://pandas.pydata.org/">pandas</a> concept of labeled dimension to large N-dimension arrays prevalent in scientific computing. The result is an ease of manipulation of dimensions without having to guess or remember what they correspond to. Moreover, xarray plays nicely with two other relatively new libraries:</p>
+<ul>
+<li>
+<a href="http://dask.pydata.org/en/latest/">dask</a>, which enables out of core computation so that memory availability becomes much less an issue with large data sets; </li>
+<li>
+<a href="http://geo.holoviews.org/">GeoViews</a>, a library sitting on top of <a href="http://holoviews.org/">HoloViews</a>. The latter eases the burden of data visualization by offering an unusual approach that does away with step-by-step graphical coding and allows the user to concentrate how the data organization instead. This results in a substantial reduction code written, which makes data analysis much cleaner and less bug-prone. GeoViews sits on top of the visualization package HoloViews, with an emphasis on geophysical data. It's also my first good-bye to the aging (10+ years) matplotlib library. It'll still be handy now and then, but it's time to try new things. <p class="more"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/">Read more…</a></p>
+</li>
+</ul>
+=======
+<p>In this post, I'm going to briefly describe how a I download the <a href="https://seabass.gsfc.nasa.gov/wiki/NOMAD">NASA bio-Optical Marine Algorithm Dataset or NOMAD</a> created for algorithm development, extract the data I need and store it all neatly in a Pandas DataFrame. Here I use the latest dataset, NOMAD v.2, created in 2008.
+</p>
+<p class="more"><a href="posts/getting-nomadata-into-a-pandas-dataframe/">Read more…</a></p>
+>>>>>>> gh-pages
 </div>
 </div>
 </div>
@@ -183,46 +396,6 @@ article: http://ogp.me/ns/article#
 <a href="http://geo.holoviews.org/">GeoViews</a>, a library sitting on top of <a href="http://holoviews.org/">HoloViews</a>. The latter eases the burden of data visualization by offering an unusual approach that does away with step-by-step graphical coding and allows the user to concentrate how the data organization instead. This results in a substantial reduction code written, which makes data analysis much cleaner and less bug-prone. GeoViews sits on top of the visualization package HoloViews, with an emphasis on geophysical data. It's also my first good-bye to the aging (10+ years) matplotlib library. It'll still be handy now and then, but it's time to try new things. <p class="more"><a href="posts/xarray-geoviews-a-new-perspective-on-oceanographic-data-part-i/">Read more…</a></p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/clustering-optical-water-types/">Clustering Optical Water Types</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2017-02-14T17:26:29-05:00">2017-02-14 17:26</time>
-</div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/posts/clustering-optical-water-types/"></div>
-<script src="https://apis.google.com/js/plusone.js"></script>
-</div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/jupyter/" rel="tag">jupyter</a></li>
-           <li><a class="tag p-category" href="categories/ocean-color/" rel="tag">ocean color</a></li>
-           <li><a class="tag p-category" href="categories/optical-water-type/" rel="tag">optical water type</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This post describes an attempt at reproducing a <a href="http://ieeexplore.ieee.org/document/942555/">study of ocean color optical water types (OWT)</a>. Here, remote sensing reflectance (Rrs) was used to partition samples into one of several water types according to their <a href="https://en.wikipedia.org/wiki/Water_remote_sensing">apparent optical properties</a>. Naturally, the assumption is that the data set at hand - over 2400 samples including latitude, longitude, 12 bands in the visible spectrum, and chlorophyll. 
-The authors of the study referred to above used fuzzy c-means clustering (FCM). However, <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.403.7600&amp;rep=rep1&amp;type=pdf">K-means clustering yields results that are pretty close to FMC</a>. So that's what I'll use here. 
-</p>
-<p class="more"><a href="posts/clustering-optical-water-types/">Read more…</a></p>
 </div>
 </div>
 </div>
