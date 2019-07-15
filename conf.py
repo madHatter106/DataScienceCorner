@@ -26,7 +26,7 @@ SITE_URL = "https://madhatter106.github.io/"
 # If not set, defaults to SITE_URL
 BASE_URL = "https://madhatter106.github.io/DataScienceCorner/"
 BLOG_EMAIL = "erdemk@protonmail.com"
-BLOG_DESCRIPTION = "A blog about thoughts and games with data"  # (translatable)
+BLOG_DESCRIPTION = "On confronting data..."  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -133,19 +133,19 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 #          else they won’t be highlighted when active.
 NAVIGATION_LINKS = {
         DEFAULT_LANG: (
-            ('/index.html', 'Home', 'icon-home'),
-            ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-            ('/categories/index.html', 'Tags', 'icon-tags'),
-            ('/rss.xml', 'RSS', 'icon-rss'),
-            ('https://www.linkedin.com/in/erdem-karaköylü-49487455', 'About me', 'icon-user'),
-            ('https://twitter.com/grayWolfDC', 'My Twitter', 'icon-twitter'),
-            ('https://github.com/madHatter106', 'My Github', 'icon-github'),
+            ('/index.html', 'Home', 'fa fa-home'),
+            ('/archive.html', 'Archives', 'fa fa-folder-open'),
+            ('/categories/index.html', 'Tags', 'fa fa-tags'),
+            ('/rss.xml', 'RSS', 'fa fa-rss'),
+            ('https://www.linkedin.com/in/erdem-karaköylü-49487455', 'My Linkedin', 'fa fa-linkedin'),
+            ('https://twitter.com/erdemkarakoylu', 'My Twitter', 'fa fa-twitter'),
+            ('https://github.com/madHatter106', 'My Github', 'fa fa-github'),
 
     ),
 }
 
 # Name of the theme to use.
-THEME = "zen-ipython"
+THEME = "zen-forkawesome"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
@@ -964,21 +964,21 @@ DEPLOY_DRAFTS = False
 # MATHJAX_CONFIG = ""
 
 # If you are using the compile-ipynb plugin, just add this one:
-# MATHJAX_CONFIG = """
-# <script type="text/x-mathjax-config">
-# MathJax.Hub.Config({
-#     tex2jax: {
-#         inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
-#         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
-#         processEscapes: true
-#     },
-#     displayAlign: 'left', // Change this to 'center' to center equations.
-#     "HTML-CSS": {
-#         styles: {'.MathJax_Display': {"margin": 0}}
-#     }
-# });
-# </script>
-# """
+MATHJAX_CONFIG = """
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+     tex2jax: {
+         inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
+         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
+         processEscapes: true
+     },
+     displayAlign: 'left', // Change this to 'center' to center equations.
+     "HTML-CSS": {
+         styles: {'.MathJax_Display': {"margin": 0}}
+     }
+ });
+ </script>
+ """
 
 # Want to use KaTeX instead of MathJax? While KaTeX is less featureful,
 # it's faster and the output looks better.
