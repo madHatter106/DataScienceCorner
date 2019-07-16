@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>Bayesian Approach to Chlorophyll Estimation from Satellite Remote Sensing | Erdem Karaköylü 's DS corner</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://madhatter106.github.io/DataScienceCorner/posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Erdem Karaköylü">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Erdem Karaköylü">
+<link rel="prev" href="../getting-nomadata-into-a-pandas-dataframe/" title="Getting the NASA bio-Optical Marine Algorithm Dataset (NOMAD) into a Pandas DataFrame" type="text/html">
+<link rel="next" href="../speeding-up-numpy-array-comparison/" title="Faster comparison of two Numpy arrays" type="text/html">
 <meta property="og:site_name" content="Erdem Karaköylü 's DS corner">
 <meta property="og:title" content="Bayesian Approach to Chlorophyll Estimation from Satellite Remote Sens">
 <meta property="og:url" content="https://madhatter106.github.io/DataScienceCorner/posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/">
@@ -23,42 +28,66 @@ article: http://ogp.me/ns/article#
 <meta property="article:tag" content="pymc3">
 </head>
 <body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
+    
     <section class="social"><ul>
-<li><a href="../../index.html" title="Home"><i class="icon-home"></i></a></li>
-            <li><a href="../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/erdem-karak%C3%B6yl%C3%BC-49487455" title="About me"><i class="icon-user"></i></a></li>
-            <li><a href="https://twitter.com/grayWolfDC" title="My Twitter"><i class="icon-twitter"></i></a></li>
-            <li><a href="https://github.com/madHatter106" title="My Github"><i class="icon-github"></i></a></li>
+<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../../categories/index.html" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/erdem-karak%C3%B6yl%C3%BC-49487455" title="My Linkedin"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://twitter.com/erdemkarakoylu" title="My Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/madHatter106" title="My Github"><i class="fa fa-github"></i></a></li>
+    
+    
 
-        </ul></section><section class="page-content"><div class="content" rel="main">
-    <div class="post">
-        <h1 class="p-name entry-title" itemprop="headline name">Bayesian Approach to Chlorophyll Estimation from Satellite Remote Sensing</h1>
-
-        <div class="meta">
-            <div class="authordate">
-                <time class="timeago" datetime="2017-04-10T12:41:55-05:00">2017-04-10 12:41</time>
-            
-                      |  
-        <a href="index.ipynb" id="sourcelink">Source</a>
-
+            <div class="searchform" role="search">
+                
+<!-- Google custom search -->
+<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+<div class="form-group">
+<input type="text" name="q" class="form-control" placeholder="Search">
+</div>
+<button type="submit" class="btn btn-primary">
+ 	<span class="glyphicon glyphicon-search"></span>
+ </button>
+ <input type="hidden" name="sitesearch" value="https://madhatter106.github.io/">
+</form>
+ <!-- End of custom search -->
+ 
             </div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../../categories/bayesian-regression/" rel="tag">bayesian regression</a></li>
-           <li><a class="tag p-category" href="../../categories/chlorophyll/" rel="tag">chlorophyll</a></li>
-           <li><a class="tag p-category" href="../../categories/ocean-color/" rel="tag">ocean color</a></li>
-           <li><a class="tag p-category" href="../../categories/pymc3/" rel="tag">pymc3</a></li>
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Bayesian Approach to Chlorophyll Estimation from Satellite Remote Sensing</a></h1>
+
+        <div class="metadata">
+            <p class="dateline"><a href="." rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2017-04-10T12:41:55-05:00" itemprop="datePublished" title="2017-04-10 12:41">2017-04-10 12:41</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                    Erdem Karaköylü
+            </span></p>
+                <p class="commentline"><i class="far fa-comment"></i>
+
+            
+        </p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink"><i class="fa fa-file-code"></i> Source</a></p>
+
+            
+
+            
+    <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+        <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../categories/bayesian-regression/" rel="tag">bayesian regression</a></li>
+            <li><a class="tag p-category" href="../../categories/chlorophyll/" rel="tag">chlorophyll</a></li>
+            <li><a class="tag p-category" href="../../categories/ocean-color/" rel="tag">ocean color</a></li>
+            <li><a class="tag p-category" href="../../categories/pymc3/" rel="tag">pymc3</a></li>
         </ul>
 </div>
 
         </div>
-        <div class="body">
-            <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -91,7 +120,7 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 <span class="kn">from</span> <span class="nn">theano</span> <span class="k">import</span> <span class="n">shared</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -107,7 +136,7 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -202,7 +231,7 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
     <span class="k">return</span> <span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -215,7 +244,7 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfNomadV2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">'./bayesianChl_DATA/NOMADV2SWFClean.pkl'</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -238,7 +267,7 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfNomadV2</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -248,7 +277,7 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -401,7 +430,7 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfNomadV2</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -411,7 +440,7 @@ $$ log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^{4}a_ilog_{10}\left(\frac{max
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -457,7 +486,7 @@ memory usage: 91.3 KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sb</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">dfNomadV2</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s1">'rrs443'</span><span class="p">,</span> <span class="s1">'rrs489'</span><span class="p">,</span> <span class="s1">'rrs510'</span><span class="p">,</span> <span class="s1">'rrs555'</span><span class="p">,</span><span class="s1">'chl_all'</span><span class="p">]);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -467,7 +496,7 @@ memory usage: 91.3 KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -505,7 +534,7 @@ memory usage: 91.3 KB
 <span class="n">dfLogOCx</span><span class="p">[</span><span class="s1">'chl'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">dfNomadV2</span><span class="o">.</span><span class="n">chl_all</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -528,7 +557,7 @@ memory usage: 91.3 KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -538,7 +567,7 @@ memory usage: 91.3 KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -601,7 +630,7 @@ memory usage: 91.3 KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -611,7 +640,7 @@ memory usage: 91.3 KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -692,7 +721,7 @@ memory usage: 91.3 KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -702,7 +731,7 @@ memory usage: 91.3 KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -745,7 +774,7 @@ memory usage: 27.8 KB
 <span class="c1">#g.axes[0,0].set_xticks(np.arange(-0.5,1.5,0.5));</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -755,7 +784,7 @@ memory usage: 27.8 KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -789,7 +818,7 @@ memory usage: 27.8 KB
 <span class="nb">print</span><span class="p">(</span><span class="n">myCoefs</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -799,7 +828,7 @@ memory usage: 27.8 KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -831,7 +860,7 @@ memory usage: 27.8 KB
 <span class="n">chlMdlFreq</span> <span class="o">=</span> <span class="n">mdlFreq</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">mxBl2Gr</span><span class="p">)</span> <span class="c1"># evaluate polynomial with input data</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -857,7 +886,7 @@ memory usage: 27.8 KB
 <span class="n">chlMdlOc4v6</span> <span class="o">=</span> <span class="n">mdlOC4v6</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">mxBl2Gr</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -888,7 +917,7 @@ memory usage: 27.8 KB
         <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$ log_</span><span class="si">{10}</span><span class="s1">$ (measured chl)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -898,7 +927,7 @@ memory usage: 27.8 KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -934,7 +963,7 @@ memory usage: 27.8 KB
 <span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">"r^2, OC4v6: </span><span class="si">%.2f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlMdlOc4v6</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -944,7 +973,7 @@ memory usage: 27.8 KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -995,7 +1024,7 @@ First I have to specify some priors around the coefficients. I'll assume weakly 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1005,7 +1034,7 @@ First I have to specify some priors around the coefficients. I'll assume weakly 
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1041,7 +1070,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <span class="n">ocxRatioShrd</span> <span class="o">=</span> <span class="n">shared</span><span class="p">(</span><span class="n">ocxRatio</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1065,7 +1094,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
     <span class="n">traceOCx_norm</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1075,7 +1104,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1090,7 +1119,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -1125,7 +1154,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <span class="n">pm</span><span class="o">.</span><span class="n">traceplot</span><span class="p">(</span><span class="n">traceOCx_norm</span><span class="p">,</span><span class="n">varnames</span><span class="o">=</span><span class="n">varnames</span><span class="p">,</span><span class="n">lines</span><span class="o">=</span><span class="n">refvals</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1135,7 +1164,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1168,7 +1197,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">autocorrplot</span><span class="p">(</span><span class="n">chainOCx_norm</span><span class="p">,</span> <span class="n">varnames</span><span class="o">=</span><span class="n">varnames</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1178,7 +1207,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1213,7 +1242,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">df_summary</span><span class="p">(</span><span class="n">chainOCx_norm</span><span class="p">,</span> <span class="n">varnames</span><span class="o">=</span><span class="n">varnames</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1223,7 +1252,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -1306,7 +1335,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">forestplot</span><span class="p">(</span><span class="n">chainOCx_norm</span><span class="p">,</span><span class="n">varnames</span><span class="o">=</span><span class="n">varnames</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1316,7 +1345,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1339,7 +1368,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">chainOCx_norm</span><span class="p">,</span> <span class="n">varnames</span><span class="o">=</span><span class="n">varnames</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1349,7 +1378,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1389,7 +1418,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map_lower</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1399,7 +1428,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1435,7 +1464,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sig0</span><span class="p">,</span> <span class="n">sig1</span> <span class="o">=</span> <span class="n">GetPPC</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ocxRatio</span><span class="p">,</span> <span class="n">mcChain</span><span class="o">=</span><span class="n">chainOCx_norm</span><span class="p">,</span> <span class="n">pmModel</span><span class="o">=</span><span class="n">model_OCx_norm</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1445,7 +1474,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -1467,7 +1496,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 <span class="n">ax</span> <span class="o">=</span> <span class="n">PlotPPC</span><span class="p">(</span><span class="n">ocxRatio</span><span class="p">,</span> <span class="n">chlObs</span><span class="p">,</span> <span class="n">sig0</span><span class="p">,</span> <span class="n">sig1</span><span class="p">,</span> <span class="n">bayesCoeffs</span><span class="p">,</span> <span class="n">oc4V6Coeffs</span><span class="o">=</span><span class="n">OC4v6_coeffs</span><span class="p">,</span> <span class="n">myOLS_coeffs</span><span class="o">=</span><span class="n">myCoefs</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1477,7 +1506,7 @@ Next is to setup the bayesian model. Note the input data is cast as a <a href="h
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1519,7 +1548,7 @@ Let's calculate metrics for this model. The majority of the training data falls 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"r^2, Bayes chl: </span><span class="si">%.2f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">dfLogOCx</span><span class="o">.</span><span class="n">chl</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlBayesReal</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1529,7 +1558,7 @@ Let's calculate metrics for this model. The majority of the training data falls 
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1572,7 +1601,7 @@ r^2, Bayes chl: 0.83
 <span class="n">dfTest</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1582,7 +1611,7 @@ r^2, Bayes chl: 0.83
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1626,7 +1655,7 @@ memory usage: 5.6+ KB
 <span class="n">ocxRatioShrd</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">dfLogTest</span><span class="o">.</span><span class="n">seawifs_mxBl2Gr</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1639,7 +1668,7 @@ memory usage: 5.6+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sig0</span><span class="p">,</span> <span class="n">sig1</span> <span class="o">=</span> <span class="n">GetPPC</span><span class="p">(</span><span class="n">dfLogTest</span><span class="o">.</span><span class="n">seawifs_mxBl2Gr</span><span class="p">,</span><span class="n">mcChain</span><span class="o">=</span><span class="n">chainOCx_norm</span><span class="p">,</span> <span class="n">pmModel</span><span class="o">=</span><span class="n">model_OCx_norm</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1649,7 +1678,7 @@ memory usage: 5.6+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -1672,7 +1701,7 @@ memory usage: 5.6+ KB
              <span class="n">sig0</span><span class="p">,</span> <span class="n">sig1</span><span class="p">,</span> <span class="n">bayesCoeffs</span><span class="p">,</span> <span class="n">oc4V6Coeffs</span><span class="o">=</span><span class="n">OC4v6_coeffs</span><span class="p">,</span> <span class="n">myOLS_coeffs</span><span class="o">=</span><span class="n">myCoefs</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1682,7 +1711,7 @@ memory usage: 5.6+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1715,7 +1744,7 @@ memory usage: 5.6+ KB
 <span class="nb">print</span><span class="p">(</span><span class="s2">"r^2, Bayes chl: </span><span class="si">%.2f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">dfLogTest</span><span class="o">.</span><span class="n">insitu_chlor_a</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">chlBayesReal</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1725,7 +1754,7 @@ memory usage: 5.6+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1756,28 +1785,35 @@ That's it for this post. But that's not it for this dataset. The diagnostics dis
 </div>
 </div>
 </div>
+</div>
     </div>
-  </div>
-
-        </div>
-                <ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="../getting-nomadata-into-a-pandas-dataframe/" rel="prev" title="Getting NOMAData into a Pandas DataFrame">Previous post</a>
+                <a href="../getting-nomadata-into-a-pandas-dataframe/" rel="prev" title="Getting the NASA bio-Optical Marine Algorithm Dataset (NOMAD) into a Pandas DataFrame">Previous post</a>
             </li>
             <li class="next">
                 <a href="../speeding-up-numpy-array-comparison/" rel="next" title="Faster comparison of two Numpy arrays">Next post</a>
             </li>
-        </ul>
-<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="https://madhatter106.github.io/DataScienceCorner/posts/bayesian-approach-to-chlorophyll-estimation-from-satellite-remote-sensing/" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
-</div>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
 
-
-    </div>
-                     <footer id="footer"><p>Contents © 2017         <a href="mailto:erdemk@protonmail.com">Erdem Karaköylü</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+     tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+         displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+         processEscapes: true
+     },
+     displayAlign: 'left', // Change this to 'center' to center equations.
+     "HTML-CSS": {
+         styles: {'.MathJax_Display': {"margin": 0}}
+     }
+ });
+ </script></article><footer id="footer"><p>Contents © 2019         <a href="mailto:erdemk@protonmail.com">Erdem Karaköylü</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
-    </section><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+    </section><script src="../../assets/js/all-nocdn.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
 <a class="addthis_button_more"><i class="icon-share-sign icon-2x"></i>    Share</a>
 <ul>
 <li>
@@ -1794,10 +1830,15 @@ That's it for this post. But that's not it for this dataset. The diagnostics dis
 </li>
 </ul>
 </div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script type="text/javascript">
-            $(function(){
-                $('.timeago').timeago();
-            });
-        </script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
 </body>
 </html>
